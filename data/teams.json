@@ -10,10 +10,10 @@
         "name": "אנדי שובש",
         "nickname": "אנדי",
         "number": 1,
-        "position": "Player",
+        "position": "Goalkeeper",
         "age": 25,
         "head_photo": "assets/images/players/heads/100.png",
-        "bio": "Player for ניגריה"
+        "bio": "אנדי שוער טוב"
       },
       {
         "id": 101,
@@ -23,7 +23,7 @@
         "position": "Player",
         "age": 25,
         "head_photo": "assets/images/players/heads/101.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "בעיטה שלו גם קאפטן מג'יד מקנא"
       },
       {
         "id": 102,
@@ -70,10 +70,10 @@
         "name": "חמזה לבאי",
         "nickname": "חמזה",
         "number": 4,
-        "position": "Player",
+        "position": "Defender",
         "age": 25,
         "head_photo": "assets/images/players/heads/106.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "בנו את חומת סין בדמותו"
       },
       {
         "id": 107,
