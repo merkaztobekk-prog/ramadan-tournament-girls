@@ -66,8 +66,13 @@ def import_players_from_csv(csv_path='players-data.csv', output_path='data/teams
             
             if not position:
                 position = 'Player'
-            if not age or not age.isdigit():
+
+            # Parse number
+            try:
+                age = int(age) if age else 25
+            except ValueError:
                 age = 25
+
             if not bio:
                 bio = f'Player for {team_name}'
             # Create player entry

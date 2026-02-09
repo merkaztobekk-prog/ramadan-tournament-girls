@@ -231,8 +231,11 @@
                     <td colspan="6" style="background-color: var(--light-gray); padding: 20px;">
                         <div class="row">
                             <div class="col-md-3 text-center">
-                                <div class="player-card-template mx-auto" style="width: 120px; height: 160px;">
-                                    <img src="assets/images/player_template.png" alt="Player" class="player-body" onerror="this.style.display='none'">
+                                <div class="player-card-template mx-auto" style="width: 120px; height: 160px; position: relative; --head-top-position: 10px;">
+                                    <!-- Background: Player template body -->
+                                    <img src="assets/images/player_template.png" alt="Player template" class="player-body" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0;">
+                                    <!-- Foreground: Player head photo overlay -->
+                                    <img src="${player.head_photo}" alt="${player.nickname || player.name}" class="player-head-overlay" onerror="this.style.display='none'" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; position: absolute; top: var(--head-top-position); left: 50%; transform: translateX(-50%); border: 2px solid #fff; z-index: 2;">
                                 </div>
                                 <div class="player-number-overlay">${player.number}</div>
                             </div>
@@ -350,8 +353,11 @@
         modalBody.innerHTML = `
             <div class="row">
                 <div class="col-md-4 text-center">
-                    <div class="player-card-template mx-auto">
-                        <img src="assets/images/player_template.png" alt="Player" class="player-body" onerror="this.style.display='none'">
+                    <div class="player-card-template mx-auto" style="width: 150px; height: 200px; position: relative; --head-top-position: 15px;">
+                        <!-- Background: Player template body -->
+                        <img src="assets/images/player_template.png" alt="Player template" class="player-body" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0;">
+                        <!-- Foreground: Player head photo overlay -->
+                        <img src="${player.head_photo}" alt="${player.nickname || player.name}" class="player-head-overlay" onerror="this.style.display='none'" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; position: absolute; top: var(--head-top-position); left: 50%; transform: translateX(-50%); border: 2px solid #fff; z-index: 2;">
                         <div class="player-number-overlay">${player.number}</div>
                     </div>
                 </div>
