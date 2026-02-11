@@ -143,7 +143,7 @@
         teamsTableBody.innerHTML = teams.map(team => {
             // Find the captain for this team
             const captain = team.members.find(m => m.is_captain);
-            const captainName = captain ? (captain.nickname || captain.name) : 'אין קפטן';
+            const captainName = captain ? (captain.name || captain.nickname) : 'אין קפטן';
 
             return `
                 <tr class="team-row" data-team-id="${team.id}" onclick="toggleTeamRow(${team.id})" style="cursor: pointer;">
