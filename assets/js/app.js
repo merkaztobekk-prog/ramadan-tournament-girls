@@ -74,22 +74,31 @@
 
     // Render dashboard
     function renderDashboard() {
-        // Next match
+        // Next matches on same date
         const nextMatch = matches.find(m => m.score1 === null || m.score2 === null);
         const nextMatchCard = document.getElementById('nextMatchCard');
 
         if (nextMatch) {
-            const team1 = teams.find(t => t.id === nextMatch.team1_id);
-            const team2 = teams.find(t => t.id === nextMatch.team2_id);
-            nextMatchCard.innerHTML = `
-                <div class="match-teams">
-                    <span>${team1 ? team1.name : 'טרם נקבע'}</span>
-                    <span style="color: var(--secondary-yellow); font-weight: 700;">נגד</span>
-                    <span>${team2 ? team2.name : 'טרם נקבע'}</span>
-                </div>
-                <p class="mt-3 mb-0"><strong>תאריך:</strong> ${nextMatch.date}</p>
-                <p class="mb-0"><strong>מיקום:</strong> ${nextMatch.location}</p>
-            `;
+            // Find all matches on the same date
+            const matchesOnSameDate = matches.filter(m =>
+                m.date === nextMatch.date && (m.score1 === null || m.score2 === null)
+            );
+
+            nextMatchCard.innerHTML = matchesOnSameDate.map(match => {
+                const team1 = teams.find(t => t.id === match.team1_id);
+                const team2 = teams.find(t => t.id === match.team2_id);
+                return `
+                    <div class="match-result mb-3 pb-3 border-bottom">
+                        <div class="match-teams">
+                            <span>${team1 ? team1.name : 'טרם נקבע'}</span>
+                            <span style="color: var(--secondary-yellow); font-weight: 700;">נגד</span>
+                            <span>${team2 ? team2.name : 'טרם נקבע'}</span>
+                        </div>
+                        <p class="mt-2 mb-0"><strong>תאריך:</strong> ${match.date}</p>
+                        <p class="mb-0"><strong>מיקום:</strong> ${match.location}</p>
+                    </div>
+                `;
+            }).join('');
         } else {
             nextMatchCard.innerHTML = '<p>אין משחקים קרובים</p>';
         }
