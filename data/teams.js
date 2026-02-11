@@ -13,7 +13,8 @@ window.TEAMS_DATA = [
         "number": 1,
         "position": "Goalkeeper",
         "head_photo": "assets/images/players/heads/100.jpg",
-        "bio": "שוער טוב אחי"
+        "bio": "שוער טוב אחי",
+        "is_captain": false
       },
       {
         "id": 101,
@@ -22,7 +23,8 @@ window.TEAMS_DATA = [
         "number": 77,
         "position": "Attacker",
         "head_photo": "assets/images/players/heads/101.jpg",
-        "bio": "בעיטה שקפטן מאג'יד מקנא בה"
+        "bio": "בעיטה שקפטן מאג'יד מקנא בה",
+        "is_captain": false
       },
       {
         "id": 102,
@@ -31,7 +33,8 @@ window.TEAMS_DATA = [
         "number": 82,
         "position": "Player",
         "head_photo": "assets/images/players/heads/102.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 103,
@@ -40,7 +43,8 @@ window.TEAMS_DATA = [
         "number": 13,
         "position": "Player",
         "head_photo": "assets/images/players/heads/103.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 104,
@@ -49,7 +53,8 @@ window.TEAMS_DATA = [
         "number": 44,
         "position": "Player",
         "head_photo": "assets/images/players/heads/104.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 105,
@@ -58,7 +63,8 @@ window.TEAMS_DATA = [
         "number": 30,
         "position": "Player",
         "head_photo": "assets/images/players/heads/105.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 106,
@@ -67,7 +73,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Defender",
         "head_photo": "assets/images/players/heads/106.jpg",
-        "bio": "השראה לחומת סין"
+        "bio": "השראה לחומת סין",
+        "is_captain": false
       },
       {
         "id": 107,
@@ -76,7 +83,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/107.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 108,
@@ -85,7 +93,8 @@ window.TEAMS_DATA = [
         "number": 19,
         "position": "Player",
         "head_photo": "assets/images/players/heads/108.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       },
       {
         "id": 109,
@@ -94,7 +103,8 @@ window.TEAMS_DATA = [
         "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/109.jpg",
-        "bio": "Player for ניגריה"
+        "bio": "Player for ניגריה",
+        "is_captain": false
       }
     ]
   },
@@ -111,7 +121,8 @@ window.TEAMS_DATA = [
         "number": 1,
         "position": "Player",
         "head_photo": "assets/images/players/heads/110.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 111,
@@ -120,7 +131,8 @@ window.TEAMS_DATA = [
         "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/111.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 112,
@@ -129,7 +141,8 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/112.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 113,
@@ -138,7 +151,8 @@ window.TEAMS_DATA = [
         "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/113.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 114,
@@ -147,7 +161,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/114.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 115,
@@ -156,7 +171,8 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/115.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 116,
@@ -165,7 +181,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/116.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 117,
@@ -174,7 +191,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/117.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 118,
@@ -183,7 +201,8 @@ window.TEAMS_DATA = [
         "number": 89,
         "position": "Player",
         "head_photo": "assets/images/players/heads/118.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       },
       {
         "id": 119,
@@ -192,7 +211,8 @@ window.TEAMS_DATA = [
         "number": 69,
         "position": "Player",
         "head_photo": "assets/images/players/heads/119.jpg",
-        "bio": "Player for פסז'"
+        "bio": "Player for פסז'",
+        "is_captain": false
       }
     ]
   },
@@ -209,7 +229,8 @@ window.TEAMS_DATA = [
         "number": 55,
         "position": "Player",
         "head_photo": "assets/images/players/heads/120.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 121,
@@ -218,7 +239,8 @@ window.TEAMS_DATA = [
         "number": 25,
         "position": "Player",
         "head_photo": "assets/images/players/heads/121.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 122,
@@ -227,7 +249,8 @@ window.TEAMS_DATA = [
         "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/122.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 123,
@@ -236,7 +259,8 @@ window.TEAMS_DATA = [
         "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/123.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 124,
@@ -245,7 +269,8 @@ window.TEAMS_DATA = [
         "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/124.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 125,
@@ -254,7 +279,8 @@ window.TEAMS_DATA = [
         "number": 21,
         "position": "Player",
         "head_photo": "assets/images/players/heads/125.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 126,
@@ -263,7 +289,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/126.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 127,
@@ -272,7 +299,8 @@ window.TEAMS_DATA = [
         "number": 22,
         "position": "Player",
         "head_photo": "assets/images/players/heads/127.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 128,
@@ -281,7 +309,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/128.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 129,
@@ -290,7 +319,8 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/129.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 130,
@@ -299,7 +329,8 @@ window.TEAMS_DATA = [
         "number": 5,
         "position": "Player",
         "head_photo": "assets/images/players/heads/130.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 131,
@@ -308,7 +339,8 @@ window.TEAMS_DATA = [
         "number": 30,
         "position": "Player",
         "head_photo": "assets/images/players/heads/131.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 132,
@@ -317,7 +349,8 @@ window.TEAMS_DATA = [
         "number": 41,
         "position": "Player",
         "head_photo": "assets/images/players/heads/132.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       },
       {
         "id": 133,
@@ -326,7 +359,8 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/133.jpg",
-        "bio": "Player for Dar al fajir Fc"
+        "bio": "Player for Dar al fajir Fc",
+        "is_captain": false
       }
     ]
   },
@@ -343,7 +377,8 @@ window.TEAMS_DATA = [
         "number": 1,
         "position": "Player",
         "head_photo": "assets/images/players/heads/134.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 135,
@@ -352,7 +387,8 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/135.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 136,
@@ -361,7 +397,8 @@ window.TEAMS_DATA = [
         "number": 6,
         "position": "Player",
         "head_photo": "assets/images/players/heads/136.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 137,
@@ -370,7 +407,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/137.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 138,
@@ -379,7 +417,8 @@ window.TEAMS_DATA = [
         "number": 38,
         "position": "Player",
         "head_photo": "assets/images/players/heads/138.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 139,
@@ -388,7 +427,8 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/139.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 140,
@@ -397,7 +437,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/140.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 141,
@@ -406,7 +447,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/141.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 142,
@@ -415,7 +457,8 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/142.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       },
       {
         "id": 143,
@@ -424,7 +467,8 @@ window.TEAMS_DATA = [
         "number": 69,
         "position": "Player",
         "head_photo": "assets/images/players/heads/143.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
+        "bio": "Player for המוסד לביטוח לאומי",
+        "is_captain": false
       }
     ]
   },
@@ -441,7 +485,8 @@ window.TEAMS_DATA = [
         "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/144.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 145,
@@ -450,7 +495,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/145.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 146,
@@ -459,7 +505,8 @@ window.TEAMS_DATA = [
         "number": 12,
         "position": "Player",
         "head_photo": "assets/images/players/heads/146.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 147,
@@ -468,7 +515,8 @@ window.TEAMS_DATA = [
         "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/147.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 148,
@@ -477,7 +525,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/148.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 149,
@@ -486,7 +535,8 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/149.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 150,
@@ -495,7 +545,8 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/150.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 151,
@@ -504,7 +555,8 @@ window.TEAMS_DATA = [
         "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/151.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 152,
@@ -513,7 +565,8 @@ window.TEAMS_DATA = [
         "number": 47,
         "position": "Player",
         "head_photo": "assets/images/players/heads/152.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 153,
@@ -522,7 +575,8 @@ window.TEAMS_DATA = [
         "number": 23,
         "position": "Player",
         "head_photo": "assets/images/players/heads/153.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 154,
@@ -531,7 +585,8 @@ window.TEAMS_DATA = [
         "number": 21,
         "position": "Player",
         "head_photo": "assets/images/players/heads/154.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 155,
@@ -540,7 +595,8 @@ window.TEAMS_DATA = [
         "number": 70,
         "position": "Player",
         "head_photo": "assets/images/players/heads/155.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 156,
@@ -549,7 +605,8 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/156.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 157,
@@ -558,7 +615,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/157.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 158,
@@ -567,7 +625,8 @@ window.TEAMS_DATA = [
         "number": 5,
         "position": "Player",
         "head_photo": "assets/images/players/heads/158.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       },
       {
         "id": 159,
@@ -576,7 +635,8 @@ window.TEAMS_DATA = [
         "number": 6,
         "position": "Player",
         "head_photo": "assets/images/players/heads/159.jpg",
-        "bio": "Player for ביתר רוסייפה"
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       }
     ]
   },
@@ -593,7 +653,8 @@ window.TEAMS_DATA = [
         "number": 70,
         "position": "Player",
         "head_photo": "assets/images/players/heads/160.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 161,
@@ -602,7 +663,8 @@ window.TEAMS_DATA = [
         "number": 15,
         "position": "Player",
         "head_photo": "assets/images/players/heads/161.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 162,
@@ -611,7 +673,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/162.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 163,
@@ -620,7 +683,8 @@ window.TEAMS_DATA = [
         "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/163.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 164,
@@ -629,7 +693,8 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/164.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 165,
@@ -638,7 +703,8 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/165.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 166,
@@ -647,7 +713,8 @@ window.TEAMS_DATA = [
         "number": 6,
         "position": "Player",
         "head_photo": "assets/images/players/heads/166.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 167,
@@ -656,7 +723,8 @@ window.TEAMS_DATA = [
         "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/167.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 168,
@@ -665,7 +733,8 @@ window.TEAMS_DATA = [
         "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/168.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 169,
@@ -674,7 +743,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/169.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       },
       {
         "id": 170,
@@ -683,7 +753,8 @@ window.TEAMS_DATA = [
         "number": 67,
         "position": "Player",
         "head_photo": "assets/images/players/heads/170.jpg",
-        "bio": "Player for שישי בקטנה"
+        "bio": "Player for שישי בקטנה",
+        "is_captain": false
       }
     ]
   },
@@ -700,7 +771,8 @@ window.TEAMS_DATA = [
         "number": 94,
         "position": "Player",
         "head_photo": "assets/images/players/heads/171.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 172,
@@ -709,7 +781,8 @@ window.TEAMS_DATA = [
         "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/172.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 173,
@@ -718,7 +791,8 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/173.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 174,
@@ -727,7 +801,8 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/174.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 175,
@@ -736,7 +811,8 @@ window.TEAMS_DATA = [
         "number": 20,
         "position": "Player",
         "head_photo": "assets/images/players/heads/175.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 176,
@@ -745,7 +821,8 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/176.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 177,
@@ -754,7 +831,8 @@ window.TEAMS_DATA = [
         "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/177.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 178,
@@ -763,7 +841,8 @@ window.TEAMS_DATA = [
         "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/178.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 179,
@@ -772,7 +851,8 @@ window.TEAMS_DATA = [
         "number": 77,
         "position": "Player",
         "head_photo": "assets/images/players/heads/179.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 180,
@@ -781,7 +861,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/180.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 181,
@@ -790,7 +871,8 @@ window.TEAMS_DATA = [
         "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/181.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       },
       {
         "id": 182,
@@ -799,7 +881,8 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/182.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
+        "bio": "Player for ממזרים חסרי כבוד",
+        "is_captain": false
       }
     ]
   },
@@ -816,7 +899,8 @@ window.TEAMS_DATA = [
         "number": 1,
         "position": "Player",
         "head_photo": "assets/images/players/heads/183.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 184,
@@ -825,7 +909,8 @@ window.TEAMS_DATA = [
         "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/184.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 185,
@@ -834,7 +919,8 @@ window.TEAMS_DATA = [
         "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/185.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 186,
@@ -843,7 +929,8 @@ window.TEAMS_DATA = [
         "number": 39,
         "position": "Player",
         "head_photo": "assets/images/players/heads/186.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 187,
@@ -852,7 +939,8 @@ window.TEAMS_DATA = [
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/187.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 188,
@@ -861,7 +949,8 @@ window.TEAMS_DATA = [
         "number": 77,
         "position": "Player",
         "head_photo": "assets/images/players/heads/188.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 189,
@@ -870,7 +959,8 @@ window.TEAMS_DATA = [
         "number": 67,
         "position": "Player",
         "head_photo": "assets/images/players/heads/189.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 190,
@@ -879,7 +969,8 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/190.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       },
       {
         "id": 191,
@@ -888,7 +979,8 @@ window.TEAMS_DATA = [
         "number": 66,
         "position": "Player",
         "head_photo": "assets/images/players/heads/191.jpg",
-        "bio": "Player for Fc ילדים"
+        "bio": "Player for Fc ילדים",
+        "is_captain": false
       }
     ]
   }

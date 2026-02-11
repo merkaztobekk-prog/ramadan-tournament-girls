@@ -14,6 +14,7 @@
     <!-- Data files (must load before admin.js) -->
     <script src="data/teams.js"></script>
     <script src="data/matches.js"></script>
+    <script src="data/news.js"></script>
 </head>
 
 <body>
@@ -29,6 +30,10 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="matches-tab" data-bs-toggle="tab" data-bs-target="#matches"
                     type="button" role="tab">משחקים</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button"
+                    role="tab">חדשות</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="export-tab" data-bs-toggle="tab" data-bs-target="#export" type="button"
@@ -139,6 +144,80 @@
                 </div>
             </div>
 
+            <!-- News Management Tab -->
+            <div class="tab-pane fade" id="news" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="card admin-card">
+                            <div class="card-header">
+                                <h5>הוספת/עריכת חדשה</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="newsForm">
+                                    <input type="hidden" id="newsId">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">כותרת</label>
+                                        <input type="text" class="form-control" id="newsTitle" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">הודעה</label>
+                                        <textarea class="form-control" id="newsMessage" rows="4" required></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">תאריך</label>
+                                        <input type="date" class="form-control" id="newsDate" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">עדיפות</label>
+                                        <select class="form-select" id="newsPriority">
+                                            <option value="normal">רגיל</option>
+                                            <option value="high">גבוה</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary">שמור חדשה</button>
+                                        <button type="button" class="btn btn-secondary" onclick="resetNewsForm()">נקה
+                                            טופס</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="card admin-card">
+                            <div class="card-header">
+                                <h5>רשימת חדשות</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>תאריך</th>
+                                                <th>כותרת</th>
+                                                <th>עדיפות</th>
+                                                <th>פעולות</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="newsList">
+                                            <tr>
+                                                <td colspan="4" class="text-center">טוען...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Export Tab -->
             <div class="tab-pane fade" id="export" role="tabpanel">
                 <div class="row justify-content-center">
@@ -160,6 +239,9 @@
                                 <div class="d-grid gap-3">
                                     <button class="btn btn-lg btn-success" onclick="exportMatches()">
                                         📥 ייצא matches.json
+                                    </button>
+                                    <button class="btn btn-lg btn-success" onclick="exportNews()">
+                                        📰 ייצא news.json
                                     </button>
                                     <button class="btn btn-lg btn-outline-secondary" onclick="runStatsUpdate()">
                                         🔄 הרץ עדכון סטטיסטיקות (דורש Python)

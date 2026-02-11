@@ -6,7 +6,9 @@
     let teams = [];
     let matches = [];
     let players = [];
+    let news = [];
     let nextMatchId = 1;
+    let nextNewsId = 1;
 
     // Initialize
     document.addEventListener('DOMContentLoaded', function () {
@@ -24,6 +26,7 @@
 
         teams = window.TEAMS_DATA;
         matches = window.MATCHES_DATA;
+        news = window.NEWS_DATA || [];
 
         // Extract all players
         players = teams.flatMap(team =>
@@ -39,8 +42,14 @@
             nextMatchId = Math.max(...matches.map(m => m.id)) + 1;
         }
 
+        // Determine next news ID
+        if (news.length > 0) {
+            nextNewsId = Math.max(...news.map(n => n.id)) + 1;
+        }
+
         populateTeamDropdowns();
         renderMatchesList();
+        renderNewsList();
         updateDataPreview();
     }
 
@@ -61,6 +70,9 @@
     function setupEventListeners() {
         const matchForm = document.getElementById('matchForm');
         matchForm.addEventListener('submit', handleMatchSubmit);
+
+        const newsForm = document.getElementById('newsForm');
+        newsForm.addEventListener('submit', handleNewsSubmit);
 
         // Show goals section when scores are entered
         const score1 = document.getElementById('score1');
@@ -290,6 +302,133 @@
     // Run stats update (local only)
     window.runStatsUpdate = function () {
         alert('כדי להריץ עדכון סטטיסטיקות:\n1. שמור את matches.json\n2. פתח terminal\n3. הרץ: python update_stats.py');
+    };
+
+    // ===== NEWS MANAGEMENT =====
+
+    // Render news list
+    function renderNewsList() {
+        const tbody = document.getElementById('newsList');
+
+        if (news.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="4" class="text-center">אין חדשות</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = news.map(item => {
+            const priorityBadge = item.priority === 'high'
+                ? '<span class="badge bg-danger">גבוה</span>'
+                : '<span class="badge bg-secondary">רגיל</span>';
+
+            return `
+                <tr>
+                    <td>${item.date}</td>
+                    <td>${item.title}</td>
+                    <td>${priorityBadge}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="editNews(${item.id})">עריכה</button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteNews(${item.id})">מחק</button>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    // Handle news form submission
+    function handleNewsSubmit(e) {
+        e.preventDefault();
+
+        const newsId = document.getElementById('newsId').value;
+        const title = document.getElementById('newsTitle').value;
+        const message = document.getElementById('newsMessage').value;
+        const date = document.getElementById('newsDate').value;
+        const priority = document.getElementById('newsPriority').value;
+
+        const newsData = {
+            id: newsId ? parseInt(newsId) : nextNewsId++,
+            title: title,
+            message: message,
+            date: date,
+            priority: priority
+        };
+
+        if (newsId) {
+            // Edit existing news
+            const index = news.findIndex(n => n.id === newsData.id);
+            if (index !== -1) {
+                news[index] = newsData;
+            }
+        } else {
+            // Add new news
+            news.push(newsData);
+        }
+
+        renderNewsList();
+        resetNewsForm();
+
+        alert('החדשה נשמרה בהצלחה!\n\nלא לשכוח לייצא את הקובץ news.json ולעדכן את המאגר.');
+    }
+
+    // Edit news
+    window.editNews = function (newsId) {
+        const item = news.find(n => n.id === newsId);
+        if (!item) return;
+
+        document.getElementById('newsId').value = item.id;
+        document.getElementById('newsTitle').value = item.title;
+        document.getElementById('newsMessage').value = item.message;
+        document.getElementById('newsDate').value = item.date;
+        document.getElementById('newsPriority').value = item.priority;
+
+        // Scroll to form
+        document.getElementById('newsForm').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Delete news
+    window.deleteNews = function (newsId) {
+        if (!confirm('האם אתה בטוח שברצונך למחוק חדשה זו?')) return;
+
+        news = news.filter(n => n.id !== newsId);
+        renderNewsList();
+
+        alert('החדשה נמחקה בהצלחה!');
+    };
+
+    // Reset news form
+    window.resetNewsForm = function () {
+        document.getElementById('newsForm').reset();
+        document.getElementById('newsId').value = '';
+    };
+
+    // Export news
+    window.exportNews = function () {
+        // Export JSON file
+        const jsonStr = JSON.stringify(news, null, 2);
+        const jsonBlob = new Blob([jsonStr], { type: 'application/json' });
+        const jsonUrl = URL.createObjectURL(jsonBlob);
+
+        const jsonLink = document.createElement('a');
+        jsonLink.href = jsonUrl;
+        jsonLink.download = 'news.json';
+        document.body.appendChild(jsonLink);
+        jsonLink.click();
+        document.body.removeChild(jsonLink);
+        URL.revokeObjectURL(jsonUrl);
+
+        // Export JS file
+        const jsStr = `// Auto-generated from news.json\nwindow.NEWS_DATA = ${JSON.stringify(news, null, 2)};\n`;
+        const jsBlob = new Blob([jsStr], { type: 'text/javascript' });
+        const jsUrl = URL.createObjectURL(jsBlob);
+
+        const jsLink = document.createElement('a');
+        jsLink.href = jsUrl;
+        jsLink.download = 'news.js';
+        document.body.appendChild(jsLink);
+        jsLink.click();
+        document.body.removeChild(jsLink);
+        URL.revokeObjectURL(jsUrl);
+
+        alert('קבצים יוצאו בהצלחה!\nnews.json\nnews.js\n\nהעלה את הקבצים לתיקיית data/');
     };
 
 })();

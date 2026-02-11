@@ -132,10 +132,14 @@
         const teamsTableBody = document.getElementById('teamsTableBody');
 
         teamsTableBody.innerHTML = teams.map(team => {
+            // Find the captain for this team
+            const captain = team.members.find(m => m.is_captain);
+            const captainName = captain ? (captain.nickname || captain.name) : 'אין קפטן';
+
             return `
                 <tr class="team-row" data-team-id="${team.id}" onclick="toggleTeamRow(${team.id})" style="cursor: pointer;">
                     <td><strong>${team.name}</strong></td>
-                    <td>${team.coach}</td>
+                    <td>${captainName}</td>
                     <td>${team.members.length} שחקנים</td>
                     <td><i class="expand-icon">▼</i></td>
                 </tr>
@@ -148,7 +152,7 @@
                                     <div class="roster-player-card" onclick="event.stopPropagation(); showPlayerModal(${member.id})" style="cursor: pointer;">
                                         <span class="badge bg-secondary">${member.number}</span>
                                         <strong>${member.nickname || member.name}</strong>
-                                        <small class="d-block text-muted">${member.position}</small>
+                                        ${member.is_captain ? '<small class="d-block" style="color: var(--secondary-yellow); font-weight: bold;">⭐ קפטן</small>' : '<small class="d-block text-muted">' + member.position + '</small>'}
                                     </div>
                                 </div>
                             `).join('')}
@@ -378,6 +382,7 @@
                     <p><strong>קבוצה:</strong> ${player.team_name}</p>
                     <p><strong>מספר:</strong> ${player.number}</p>
                     <p><strong>תפקיד:</strong> ${player.position}</p>
+                    ${player.is_captain ? '<p><strong style="color: var(--secondary-yellow);">⭐ קפטן הקבוצה</strong></p>' : ''}
                     <hr>
                     <h5>סטטיסטיקות</h5>
                     <p><strong>שערים:</strong> <span style="color: var(--primary-green); font-size: 20px;">${playerGoals}</span></p>
