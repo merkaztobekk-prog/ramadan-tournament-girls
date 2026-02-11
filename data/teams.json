@@ -8,29 +8,29 @@
       {
         "id": 100,
         "name": "אנדי שובש",
-        "nickname": "אנדי",
+        "nickname": "שובש",
         "number": 1,
-        "position": "Goalkeeper",
+        "position": "שוער",
         "head_photo": "assets/images/players/heads/100.jpg",
-        "bio": "שוער טוב אחי",
+        "bio": "Player for ניגריה",
         "is_captain": false
       },
       {
         "id": 101,
         "name": "הרון שמסי",
-        "nickname": "הרון",
+        "nickname": "שמסי",
         "number": 77,
-        "position": "Attacker",
+        "position": "התקפה",
         "head_photo": "assets/images/players/heads/101.jpg",
-        "bio": "בעיטה שקפטן מאג'יד מקנא בה",
+        "bio": "Player for ניגריה",
         "is_captain": false
       },
       {
         "id": 102,
         "name": "עלי שפסו",
-        "nickname": "עלי",
+        "nickname": "שפסו",
         "number": 82,
-        "position": "Player",
+        "position": "התקפה",
         "head_photo": "assets/images/players/heads/102.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
@@ -38,9 +38,9 @@
       {
         "id": 103,
         "name": "אנדי לאוז",
-        "nickname": "אנדי",
+        "nickname": "לאוז",
         "number": 13,
-        "position": "Player",
+        "position": "הגנה",
         "head_photo": "assets/images/players/heads/103.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
@@ -48,19 +48,19 @@
       {
         "id": 104,
         "name": "ריאן שמסי",
-        "nickname": "ריאן",
+        "nickname": "שמסי",
         "number": 44,
-        "position": "Player",
+        "position": "קישור",
         "head_photo": "assets/images/players/heads/104.jpg",
         "bio": "Player for ניגריה",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "id": 105,
         "name": "נאתי גרכד",
-        "nickname": "נאתי",
+        "nickname": "גרכד",
         "number": 30,
-        "position": "Player",
+        "position": "התקפה",
         "head_photo": "assets/images/players/heads/105.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
@@ -68,19 +68,19 @@
       {
         "id": 106,
         "name": "חמזה לבאי",
-        "nickname": "חמזה",
+        "nickname": "לבאי",
         "number": 4,
-        "position": "Defender",
+        "position": "הגנה",
         "head_photo": "assets/images/players/heads/106.jpg",
-        "bio": "השראה לחומת סין",
+        "bio": "Player for ניגריה",
         "is_captain": false
       },
       {
         "id": 107,
         "name": "סינאל שווג",
-        "nickname": "סינאל",
+        "nickname": "שווג",
         "number": 10,
-        "position": "Player",
+        "position": "הגנה",
         "head_photo": "assets/images/players/heads/107.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
@@ -88,9 +88,9 @@
       {
         "id": 108,
         "name": "נוח שמסי",
-        "nickname": "נוח",
+        "nickname": "שמסי",
         "number": 19,
-        "position": "Player",
+        "position": "התקפה",
         "head_photo": "assets/images/players/heads/108.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
@@ -98,9 +98,9 @@
       {
         "id": 109,
         "name": "עבד שוגן",
-        "nickname": "עבד",
+        "nickname": "שוגן",
         "number": 14,
-        "position": "Player",
+        "position": "הגנה",
         "head_photo": "assets/images/players/heads/109.jpg",
         "bio": "Player for ניגריה",
         "is_captain": false
