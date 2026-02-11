@@ -50,11 +50,11 @@ window.PLAYER_STATS_DATA = [
   },
   {
     "member_id": 106,
-    "goals": 1,
+    "goals": 0,
     "assists": 0,
     "yellow_cards": 0,
     "red_cards": 0,
-    "games_played": 1
+    "games_played": 0
   },
   {
     "member_id": 107,
