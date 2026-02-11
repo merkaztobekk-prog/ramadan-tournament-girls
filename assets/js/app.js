@@ -56,7 +56,16 @@
         const banner = document.getElementById('newsBanner');
         if (!banner || news.length === 0) return;
 
-        const latestNews = news.filter(n => n.priority === 'high').slice(0, 1)[0] || news[0];
+        // Sort by date (newest first), prioritizing high priority
+        const sortedNews = [...news].sort((a, b) => {
+            // First, prioritize high-priority items
+            if (a.priority === 'high' && b.priority !== 'high') return -1;
+            if (b.priority === 'high' && a.priority !== 'high') return 1;
+            // Then sort by date (newest first)
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        const latestNews = sortedNews[0];
         banner.innerHTML = `
             <h4>${latestNews.title}</h4>
             <p>${latestNews.message}</p>
