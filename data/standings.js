@@ -1,4 +1,5 @@
-[
+// Auto-generated from standings.json
+window.STANDINGS_DATA = [
   {
     "team_id": 2,
     "team_name": "kazan",
@@ -95,4 +96,4 @@
     "goal_diff": -1,
     "points": 0
   }
-]
+];

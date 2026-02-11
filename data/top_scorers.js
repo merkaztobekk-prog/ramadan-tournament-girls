@@ -1,4 +1,5 @@
-[
+// Auto-generated from top_scorers.json
+window.TOP_SCORERS_DATA = [
   {
     "member_id": 113,
     "name": "$hoBash",
@@ -20,4 +21,4 @@
     "position": "Defender",
     "goals": 1
   }
-]
+];

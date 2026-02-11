@@ -247,33 +247,39 @@ class TournamentEngine:
         return bracket
     
     def save_results(self):
-        """Save all calculated results to JSON files."""
+        """Save all calculated results to JSON and JS files."""
         standings = self.calculate_standings()
         top_scorers = self.calculate_top_scorers()
         player_stats = self.calculate_player_stats()
         bracket = self.generate_bracket(standings)
         
-        # Save standings
-        with open(self.data_dir / 'standings.json', 'w', encoding='utf-8') as f:
-            json.dump(standings, f, indent=2, ensure_ascii=False)
+        # Helper function to save both JSON and JS
+        def save_data(filename, data, var_name):
+            # Save JSON
+            json_path = self.data_dir / filename
+            with open(json_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            
+            # Save JS
+            js_path = self.data_dir / filename.replace('.json', '.js')
+            with open(js_path, 'w', encoding='utf-8') as f:
+                f.write(f'// Auto-generated from {filename}\n')
+                f.write(f'window.{var_name} = ')
+                json.dump(data, f, indent=2, ensure_ascii=False)
+                f.write(';\n')
         
-        # Save top scorers
-        with open(self.data_dir / 'top_scorers.json', 'w', encoding='utf-8') as f:
-            json.dump(top_scorers, f, indent=2, ensure_ascii=False)
-        
-        # Save player stats
-        with open(self.data_dir / 'player_stats.json', 'w', encoding='utf-8') as f:
-            json.dump(player_stats, f, indent=2, ensure_ascii=False)
-        
-        # Save bracket
-        with open(self.data_dir / 'bracket.json', 'w', encoding='utf-8') as f:
-            json.dump(bracket, f, indent=2, ensure_ascii=False)
+        # Save all files
+        save_data('standings.json', standings, 'STANDINGS_DATA')
+        save_data('top_scorers.json', top_scorers, 'TOP_SCORERS_DATA')
+        save_data('player_stats.json', player_stats, 'PLAYER_STATS_DATA')
+        save_data('bracket.json', bracket, 'BRACKET_DATA')
         
         print("Statistics updated successfully!")
         print(f"  - {len(standings)} teams in standings")
         print(f"  - {len(top_scorers)} players with goals")
         print(f"  - {len(player_stats)} player records")
         print(f"  - Bracket generated with {len(bracket['winners_bracket'])} matches")
+        print(f"  - Created both .json and .js files")
 
 
 def main():

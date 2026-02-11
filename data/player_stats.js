@@ -1,4 +1,5 @@
-[
+// Auto-generated from player_stats.json
+window.PLAYER_STATS_DATA = [
   {
     "member_id": 100,
     "goals": 0,
@@ -727,4 +728,4 @@
     "red_cards": 0,
     "games_played": 0
   }
-]
+];

@@ -38,8 +38,7 @@ def import_players_from_csv(csv_path='players-data.csv', output_path='data/teams
             nickname = row[3].strip() if len(row) > 3 else ''
             number = row[4].strip() if len(row) > 4 else ''
             position = row[5].strip() if len(row) > 5 else ''
-            age = row[6].strip() if len(row) > 6 else ''
-            bio = row[7].strip() if len(row) > 7 else ''
+            bio = row[6].strip() if len(row) > 6 else ''
             
             # Skip if no player name
             if not first_name and not last_name and not nickname:
@@ -67,12 +66,6 @@ def import_players_from_csv(csv_path='players-data.csv', output_path='data/teams
             if not position:
                 position = 'Player'
 
-            # Parse number
-            try:
-                age = int(age) if age else 25
-            except ValueError:
-                age = 25
-
             if not bio:
                 bio = f'Player for {team_name}'
             # Create player entry
@@ -81,8 +74,7 @@ def import_players_from_csv(csv_path='players-data.csv', output_path='data/teams
                 'name': full_name,
                 'nickname': display_nickname,
                 'number': player_number,
-                'position': position.upper(),  # Default position
-                'age': age,  # Default age
+                'position': position.capitalize(),
                 'head_photo': f'assets/images/players/heads/{member_id}.jpg',
                 'bio': bio
             }
@@ -112,9 +104,18 @@ def import_players_from_csv(csv_path='players-data.csv', output_path='data/teams
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(teams_list, f, indent=2, ensure_ascii=False)
     
+    # Also write JS version
+    js_file = output_file.with_suffix('.js')
+    with open(js_file, 'w', encoding='utf-8') as f:
+        f.write('// Auto-generated from teams.json\n')
+        f.write('window.TEAMS_DATA = ')
+        json.dump(teams_list, f, indent=2, ensure_ascii=False)
+        f.write(';\n')
+    
     print(f"Import complete!")
     print(f"  - {len(teams_list)} teams")
     print(f"  - {sum(len(t['members']) for t in teams_list)} players")
+    print(f"  - Created {output_file.name} and {js_file.name}")
     print(f"\nTeams:")
     for team in teams_list:
         print(f"  - {team['name']}: {len(team['members'])} players")

@@ -15,27 +15,31 @@
         loadAllData();
     });
 
-    // Load all JSON data
-    async function loadAllData() {
-        try {
-            const [teamsData, matchesData, standingsData, scorersData, newsData] = await Promise.all([
-                fetch('data/teams.json').then(r => r.json()),
-                fetch('data/matches.json').then(r => r.json()),
-                fetch('data/standings.json').then(r => r.json()),
-                fetch('data/top_scorers.json').then(r => r.json()),
-                fetch('data/news.json').then(r => r.json())
-            ]);
+    // Load all data from global variables
+    function loadAllData() {
+        // Data loaded from script tags in index.html
+        teams = window.TEAMS_DATA || [];
+        matches = window.MATCHES_DATA || [];
+        standings = window.STANDINGS_DATA || [];
+        topScorers = window.TOP_SCORERS_DATA || [];
+        news = window.NEWS_DATA || [];
 
-            teams = teamsData;
-            matches = matchesData;
-            standings = standingsData;
-            topScorers = scorersData;
-            news = newsData;
+        renderAll();
+    }
 
-            renderAll();
-        } catch (error) {
-            console.error('Error loading data:', error);
+    // Helper function to find a player by member_id
+    function findPlayer(memberId) {
+        for (let team of teams) {
+            const player = team.members.find(m => m.id === memberId);
+            if (player) {
+                return {
+                    ...player,
+                    team_name: team.name,
+                    team_id: team.id
+                };
+            }
         }
+        return null;
     }
 
     // Render all content
@@ -44,7 +48,6 @@
         renderDashboard();
         renderTeams();
         renderSchedule();
-        renderPlayers();
         renderStats();
     }
 
@@ -71,15 +74,15 @@
             const team2 = teams.find(t => t.id === nextMatch.team2_id);
             nextMatchCard.innerHTML = `
                 <div class="match-teams">
-                    <span>${team1 ? team1.name : 'TBD'}</span>
-                    <span style="color: var(--secondary-yellow); font-weight: 700;">VS</span>
-                    <span>${team2 ? team2.name : 'TBD'}</span>
+                    <span>${team1 ? team1.name : 'טרם נקבע'}</span>
+                    <span style="color: var(--secondary-yellow); font-weight: 700;">נגד</span>
+                    <span>${team2 ? team2.name : 'טרם נקבע'}</span>
                 </div>
-                <p class="mt-3 mb-0"><strong>Date:</strong> ${nextMatch.date}</p>
-                <p class="mb-0"><strong>Location:</strong> ${nextMatch.location}</p>
+                <p class="mt-3 mb-0"><strong>תאריך:</strong> ${nextMatch.date}</p>
+                <p class="mb-0"><strong>מיקום:</strong> ${nextMatch.location}</p>
             `;
         } else {
-            nextMatchCard.innerHTML = '<p>No upcoming matches</p>';
+            nextMatchCard.innerHTML = '<p>אין משחקים קרובים</p>';
         }
 
         // Top scorer
@@ -88,8 +91,8 @@
             const topScorer = topScorers[0];
             topScorerCard.innerHTML = `
                 <h3 style="color: var(--primary-green);">${topScorer.name}</h3>
-                <p><strong>Team:</strong> ${topScorer.team}</p>
-                <p><strong>Goals:</strong> <span style="font-size: 24px; color: var(--secondary-yellow); font-weight: 700;">${topScorer.goals}</span></p>
+                <p><strong>קבוצה:</strong> ${topScorer.team}</p>
+                <p><strong>שערים:</strong> <span style="font-size: 24px; color: var(--secondary-yellow); font-weight: 700;">${topScorer.goals}</span></p>
             `;
         }
 
@@ -124,16 +127,16 @@
                 <tr class="team-row" data-team-id="${team.id}" onclick="toggleTeamRow(${team.id})" style="cursor: pointer;">
                     <td><strong>${team.name}</strong></td>
                     <td>${team.coach}</td>
-                    <td>${team.members.length} players</td>
+                    <td>${team.members.length} שחקנים</td>
                     <td><i class="expand-icon">▼</i></td>
                 </tr>
                 <tr class="team-details-row" id="team-details-${team.id}" style="display: none;">
                     <td colspan="4" style="background-color: var(--light-gray); padding: 20px;">
-                        <h5 style="color: var(--primary-green); margin-bottom: 15px;">Team Roster</h5>
+                        <h5 style="color: var(--primary-green); margin-bottom: 15px;">הרכב הקבוצה</h5>
                         <div class="row">
                             ${team.members.map(member => `
                                 <div class="col-6 col-md-4 col-lg-3 mb-3">
-                                    <div class="roster-player-card">
+                                    <div class="roster-player-card" onclick="event.stopPropagation(); showPlayerModal(${member.id})" style="cursor: pointer;">
                                         <span class="badge bg-secondary">${member.number}</span>
                                         <strong>${member.nickname || member.name}</strong>
                                         <small class="d-block text-muted">${member.position}</small>
@@ -193,9 +196,9 @@
                     </div>
                     ${match.goals && match.goals.length > 0 ? `
                         <div class="mt-2">
-                            <small class="text-muted">Goals: ${match.goals.map(g => {
+                            <small class="text-muted">שערים: ${match.goals.map(g => {
                     const scorer = findPlayer(g.member_id);
-                    return `${scorer ? scorer.nickname || scorer.name : 'Unknown'} (${g.minute}')`;
+                    return `${scorer ? scorer.nickname || scorer.name : 'לא ידוע'}`;
                 }).join(', ')}</small>
                         </div>
                     ` : ''}
@@ -247,7 +250,6 @@
                                         <p><strong>Team:</strong> ${player.team_name}</p>
                                         <p><strong>Number:</strong> ${player.number}</p>
                                         <p><strong>Position:</strong> ${player.position}</p>
-                                        <p><strong>Age:</strong> ${player.age}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <h5>Statistics</h5>
@@ -363,14 +365,13 @@
                 </div>
                 <div class="col-md-8">
                     <h4 style="color: var(--primary-green);">${player.nickname || player.name}</h4>
-                    <p><strong>Full Name:</strong> ${player.name}</p>
-                    <p><strong>Team:</strong> ${player.team_name}</p>
-                    <p><strong>Number:</strong> ${player.number}</p>
-                    <p><strong>Position:</strong> ${player.position}</p>
-                    <p><strong>Age:</strong> ${player.age}</p>
+                    <p><strong>שם מלא:</strong> ${player.name}</p>
+                    <p><strong>קבוצה:</strong> ${player.team_name}</p>
+                    <p><strong>מספר:</strong> ${player.number}</p>
+                    <p><strong>תפקיד:</strong> ${player.position}</p>
                     <hr>
-                    <h5>Statistics</h5>
-                    <p><strong>Goals:</strong> <span style="color: var(--primary-green); font-size: 20px;">${playerGoals}</span></p>
+                    <h5>סטטיסטיקות</h5>
+                    <p><strong>שערים:</strong> <span style="color: var(--primary-green); font-size: 20px;">${playerGoals}</span></p>
                     ${player.bio ? `<p class="mt-3"><em>${player.bio}</em></p>` : ''}
                 </div>
             </div>

@@ -1,4 +1,5 @@
-[
+// Auto-generated from teams.json
+window.TEAMS_DATA = [
   {
     "id": 1,
     "name": "ניגריה",
@@ -882,4 +883,4 @@
       }
     ]
   }
-]
+];

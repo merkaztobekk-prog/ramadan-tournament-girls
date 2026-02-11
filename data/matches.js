@@ -1,4 +1,5 @@
-[
+// Auto-generated from matches.json
+window.MATCHES_DATA = [
   {
     "id": 9,
     "date": "2026-02-19",
@@ -57,4 +58,4 @@
     "phase": "group",
     "goals": []
   }
-]
+];

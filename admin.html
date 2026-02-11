@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול טורניר - Admin</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+
+    <!-- Data files (must load before admin.js) -->
+    <script src="data/teams.js"></script>
+    <script src="data/matches.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="admin-header text-center py-4 mb-4">
+            <h1>לוח ניהול טורניר</h1>
+            <p class="text-muted">ניהול תוצאות משחקים ונתוני טורניר</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs admin-tabs mb-4" id="adminTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="matches-tab" data-bs-toggle="tab" data-bs-target="#matches"
+                    type="button" role="tab">משחקים</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="export-tab" data-bs-toggle="tab" data-bs-target="#export" type="button"
+                    role="tab">ייצוא נתונים</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="adminTabContent">
+            <!-- Matches Management Tab -->
+            <div class="tab-pane fade show active" id="matches" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="card admin-card">
+                            <div class="card-header">
+                                <h5>הוספת/עריכת משחק</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="matchForm">
+                                    <input type="hidden" id="matchId">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">קבוצה 1</label>
+                                        <select class="form-select" id="team1" required>
+                                            <option value="">בחר קבוצה...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">קבוצה 2</label>
+                                        <select class="form-select" id="team2" required>
+                                            <option value="">בחר קבוצה...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label class="form-label">תוצאה קבוצה 1</label>
+                                            <input type="number" class="form-control" id="score1" min="0">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label">תוצאה קבוצה 2</label>
+                                            <input type="number" class="form-control" id="score2" min="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">תאריך</label>
+                                        <input type="date" class="form-control" id="matchDate" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">מיקום</label>
+                                        <input type="text" class="form-control" id="location" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">שלב</label>
+                                        <select class="form-select" id="phase">
+                                            <option value="group">שלב הבתים</option>
+                                            <option value="knockout">נוקאאוט</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3" id="goalsSection" style="display: none;">
+                                        <label class="form-label">שערים</label>
+                                        <div id="goalsList"></div>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary mt-2"
+                                            onclick="addGoalInput()">+ הוסף שער</button>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary">שמור משחק</button>
+                                        <button type="button" class="btn btn-secondary" onclick="resetForm()">נקה
+                                            טופס</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="card admin-card">
+                            <div class="card-header">
+                                <h5>רשימת משחקים</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>תאריך</th>
+                                                <th>קבוצות</th>
+                                                <th>תוצאה</th>
+                                                <th>פעולות</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="matchesList">
+                                            <tr>
+                                                <td colspan="4" class="text-center">טוען...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Tab -->
+            <div class="tab-pane fade" id="export" role="tabpanel">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card admin-card">
+                            <div class="card-header">
+                                <h5>ייצוא נתונים</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info" role="alert">
+                                    <strong>הוראות:</strong>
+                                    <ol class="mb-0 mt-2">
+                                        <li>לחץ על "ייצא matches.json" להוריד את קובץ המשחקים</li>
+                                        <li>העלה את הקובץ למאגר GitHub</li>
+                                        <li>הרץ את הסקריפט update_stats.py לעדכון הסטטיסטיקות</li>
+                                    </ol>
+                                </div>
+
+                                <div class="d-grid gap-3">
+                                    <button class="btn btn-lg btn-success" onclick="exportMatches()">
+                                        📥 ייצא matches.json
+                                    </button>
+                                    <button class="btn btn-lg btn-outline-secondary" onclick="runStatsUpdate()">
+                                        🔄 הרץ עדכון סטטיסטיקות (דורש Python)
+                                    </button>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h6>תצוגה מקדימה של נתונים:</h6>
+                                    <pre id="dataPreview" class="bg-dark text-light p-3 rounded"
+                                        style="max-height: 400px; overflow-y: auto;"></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Admin JS -->
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>
