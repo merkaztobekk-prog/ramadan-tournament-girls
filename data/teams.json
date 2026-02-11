@@ -99,8 +99,8 @@
   },
   {
     "id": 2,
-    "name": "kazan",
-    "logo": "assets/images/teams/kazan.png",
+    "name": "פסז'",
+    "logo": "assets/images/teams/פסז'.png",
     "coach": "Coach",
     "members": [
       {
@@ -110,7 +110,7 @@
         "number": 1,
         "position": "Player",
         "head_photo": "assets/images/players/heads/110.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 111,
@@ -119,7 +119,7 @@
         "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/111.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 112,
@@ -128,7 +128,7 @@
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/112.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 113,
@@ -137,16 +137,16 @@
         "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/113.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 114,
-        "name": "nash",
-        "nickname": "nash",
+        "name": "Natkho",
+        "nickname": "Natkho",
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/114.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 115,
@@ -155,7 +155,7 @@
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/115.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 116,
@@ -164,7 +164,7 @@
         "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/116.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 117,
@@ -173,7 +173,7 @@
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/117.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
       },
       {
         "id": 118,
@@ -182,7 +182,16 @@
         "number": 89,
         "position": "Player",
         "head_photo": "assets/images/players/heads/118.jpg",
-        "bio": "Player for kazan"
+        "bio": "Player for פסז'"
+      },
+      {
+        "id": 119,
+        "name": "Diddy",
+        "nickname": "Diddy",
+        "number": 69,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/119.jpg",
+        "bio": "Player for פסז'"
       }
     ]
   },
@@ -193,129 +202,129 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 119,
+        "id": 120,
         "name": "איסמאעיל שוגן",
         "nickname": "איסמאעיל",
-        "number": 19,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/119.jpg",
-        "bio": "Player for Dar al fajir Fc"
-      },
-      {
-        "id": 120,
-        "name": "אסלאם סגס",
-        "nickname": "אסלאם",
-        "number": 20,
+        "number": 55,
         "position": "Player",
         "head_photo": "assets/images/players/heads/120.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 121,
-        "name": "אסלאן נאש",
-        "nickname": "אסלאן",
-        "number": 21,
+        "name": "אסלאם סגס",
+        "nickname": "אסלאם",
+        "number": 25,
         "position": "Player",
         "head_photo": "assets/images/players/heads/121.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 122,
-        "name": "הארון פייסל",
-        "nickname": "הארון",
-        "number": 22,
+        "name": "אסלאן נאש",
+        "nickname": "אסלאן",
+        "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/122.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 123,
-        "name": "יוסף הזאר",
-        "nickname": "יוסף",
-        "number": 23,
+        "name": "הארון פייסל",
+        "nickname": "הארון",
+        "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/123.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 124,
-        "name": "נור חתוקאי",
-        "nickname": "נור",
-        "number": 24,
+        "name": "יוסף הזאר",
+        "nickname": "יוסף",
+        "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/124.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 125,
-        "name": "נורדין שמסי",
-        "nickname": "נורדין",
-        "number": 25,
+        "name": "נור חתוקאי",
+        "nickname": "נור",
+        "number": 21,
         "position": "Player",
         "head_photo": "assets/images/players/heads/125.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 126,
-        "name": "סאם לבאי",
-        "nickname": "סאם",
-        "number": 26,
+        "name": "נורדין שמסי",
+        "nickname": "נורדין",
+        "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/126.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 127,
-        "name": "סאם תחאוכו",
+        "name": "סאם לבאי",
         "nickname": "סאם",
-        "number": 27,
+        "number": 22,
         "position": "Player",
         "head_photo": "assets/images/players/heads/127.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 128,
-        "name": "עות'מאן שוגן",
-        "nickname": "עות'מאן",
-        "number": 28,
+        "name": "סאם תחאוכו",
+        "nickname": "סאם",
+        "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/128.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 129,
-        "name": "תאיימז נאפסו",
-        "nickname": "תאיימז",
-        "number": 29,
+        "name": "עות'מאן שוגן",
+        "nickname": "עות'מאן",
+        "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/129.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 130,
-        "name": "יוסף שוגן",
-        "nickname": "יוסף",
-        "number": 30,
+        "name": "תאיימז נאפסו",
+        "nickname": "תאיימז",
+        "number": 5,
         "position": "Player",
         "head_photo": "assets/images/players/heads/130.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 131,
-        "name": "נארת שומאף",
-        "nickname": "נארת",
-        "number": 31,
+        "name": "יוסף שוגן",
+        "nickname": "יוסף",
+        "number": 30,
         "position": "Player",
         "head_photo": "assets/images/players/heads/131.jpg",
         "bio": "Player for Dar al fajir Fc"
       },
       {
         "id": 132,
-        "name": "נורדין שומאף",
-        "nickname": "נורדין",
-        "number": 32,
+        "name": "נארת שומאף",
+        "nickname": "נארת",
+        "number": 41,
         "position": "Player",
         "head_photo": "assets/images/players/heads/132.jpg",
+        "bio": "Player for Dar al fajir Fc"
+      },
+      {
+        "id": 133,
+        "name": "נורדין שומאף",
+        "nickname": "נורדין",
+        "number": 9,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/133.jpg",
         "bio": "Player for Dar al fajir Fc"
       }
     ]
@@ -327,93 +336,93 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 133,
+        "id": 134,
         "name": "נאלבי",
         "nickname": "נאלבי",
         "number": 1,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/133.jpg",
-        "bio": "Player for המוסד לביטוח לאומי"
-      },
-      {
-        "id": 134,
-        "name": "אדם",
-        "nickname": "אדם",
-        "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/134.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 135,
-        "name": "ביברס",
-        "nickname": "ביברס",
-        "number": 6,
+        "name": "אדם",
+        "nickname": "אדם",
+        "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/135.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 136,
-        "name": "דניאל",
-        "nickname": "דניאל",
-        "number": 10,
+        "name": "ביברס",
+        "nickname": "ביברס",
+        "number": 6,
         "position": "Player",
         "head_photo": "assets/images/players/heads/136.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 137,
-        "name": "בכר",
-        "nickname": "בכר",
-        "number": 38,
+        "name": "דניאל",
+        "nickname": "דניאל",
+        "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/137.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 138,
-        "name": "אנדי",
-        "nickname": "אנדי",
-        "number": 8,
+        "name": "בכר",
+        "nickname": "בכר",
+        "number": 38,
         "position": "Player",
         "head_photo": "assets/images/players/heads/138.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 139,
-        "name": "הילאל",
-        "nickname": "הילאל",
-        "number": 11,
+        "name": "אנדי",
+        "nickname": "אנדי",
+        "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/139.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 140,
-        "name": "אנדי",
-        "nickname": "אנדי",
-        "number": 4,
+        "name": "הילאל",
+        "nickname": "הילאל",
+        "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/140.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 141,
-        "name": "ארמבי",
-        "nickname": "ארמבי",
-        "number": 3,
+        "name": "אנדי",
+        "nickname": "אנדי",
+        "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/141.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       },
       {
         "id": 142,
+        "name": "ארמבי",
+        "nickname": "ארמבי",
+        "number": 3,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/142.jpg",
+        "bio": "Player for המוסד לביטוח לאומי"
+      },
+      {
+        "id": 143,
         "name": "סלים",
         "nickname": "סלים",
         "number": 69,
         "position": "Player",
-        "head_photo": "assets/images/players/heads/142.jpg",
+        "head_photo": "assets/images/players/heads/143.jpg",
         "bio": "Player for המוסד לביטוח לאומי"
       }
     ]
@@ -425,147 +434,147 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 143,
+        "id": 144,
         "name": "Gander Bey",
         "nickname": "Gander Bey",
         "number": 17,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/143.jpg",
-        "bio": "Player for ביתר רוסייפה"
-      },
-      {
-        "id": 144,
-        "name": "epstein",
-        "nickname": "epstein",
-        "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/144.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 145,
-        "name": "Chosha",
-        "nickname": "Chosha",
-        "number": 12,
+        "name": "epstein",
+        "nickname": "epstein",
+        "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/145.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 146,
-        "name": "Ashmoz",
-        "nickname": "Ashmoz",
-        "number": 7,
+        "name": "Chosha",
+        "nickname": "Chosha",
+        "number": 12,
         "position": "Player",
         "head_photo": "assets/images/players/heads/146.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 147,
-        "name": "Horshid JR",
-        "nickname": "Horshid JR",
-        "number": 10,
+        "name": "Ashmoz",
+        "nickname": "Ashmoz",
+        "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/147.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 148,
-        "name": "Fazy",
-        "nickname": "Fazy",
-        "number": 8,
+        "name": "Horshid JR",
+        "nickname": "Horshid JR",
+        "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/148.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 149,
-        "name": "Malmol",
-        "nickname": "Malmol",
-        "number": 9,
+        "name": "Fazy",
+        "nickname": "Fazy",
+        "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/149.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 150,
-        "name": "Gerchad",
-        "nickname": "Gerchad",
-        "number": 2,
+        "name": "Malmol",
+        "nickname": "Malmol",
+        "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/150.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 151,
-        "name": "Shamsi",
-        "nickname": "Shamsi",
-        "number": 47,
+        "name": "Gerchad",
+        "nickname": "Gerchad",
+        "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/151.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 152,
-        "name": "Hatrap",
-        "nickname": "Hatrap",
-        "number": 23,
+        "name": "Shamsi",
+        "nickname": "Shamsi",
+        "number": 47,
         "position": "Player",
         "head_photo": "assets/images/players/heads/152.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 153,
-        "name": "Khwaj",
-        "nickname": "Khwaj",
-        "number": 21,
+        "name": "Hatrap",
+        "nickname": "Hatrap",
+        "number": 23,
         "position": "Player",
         "head_photo": "assets/images/players/heads/153.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 154,
-        "name": "Ashmouz",
-        "nickname": "Ashmouz",
-        "number": 70,
+        "name": "Khwaj",
+        "nickname": "Khwaj",
+        "number": 21,
         "position": "Player",
         "head_photo": "assets/images/players/heads/154.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 155,
-        "name": "Horshed",
-        "nickname": "Horshed",
-        "number": 3,
+        "name": "Ashmouz",
+        "nickname": "Ashmouz",
+        "number": 70,
         "position": "Player",
         "head_photo": "assets/images/players/heads/155.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 156,
-        "name": "Zizo",
-        "nickname": "Zizo",
-        "number": 11,
+        "name": "Horshed",
+        "nickname": "Horshed",
+        "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/156.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 157,
-        "name": "Malmol",
-        "nickname": "Malmol",
-        "number": 9,
+        "name": "Zizo",
+        "nickname": "Zizo",
+        "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/157.jpg",
         "bio": "Player for ביתר רוסייפה"
       },
       {
         "id": 158,
+        "name": "Hadish",
+        "nickname": "Hadish",
+        "number": 5,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/158.jpg",
+        "bio": "Player for ביתר רוסייפה"
+      },
+      {
+        "id": 159,
         "name": "Shobash",
         "nickname": "Shobash",
         "number": 6,
         "position": "Player",
-        "head_photo": "assets/images/players/heads/158.jpg",
+        "head_photo": "assets/images/players/heads/159.jpg",
         "bio": "Player for ביתר רוסייפה"
       }
     ]
@@ -577,102 +586,102 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 159,
+        "id": 160,
         "name": "ashmouz",
         "nickname": "ashmouz",
         "number": 70,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/159.jpg",
-        "bio": "Player for שישי בקטנה"
-      },
-      {
-        "id": 160,
-        "name": "hatokay",
-        "nickname": "hatokay",
-        "number": 15,
         "position": "Player",
         "head_photo": "assets/images/players/heads/160.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 161,
-        "name": "garhad",
-        "nickname": "garhad",
-        "number": 11,
+        "name": "hatokay",
+        "nickname": "hatokay",
+        "number": 15,
         "position": "Player",
         "head_photo": "assets/images/players/heads/161.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 162,
-        "name": "napso",
-        "nickname": "napso",
-        "number": 2,
+        "name": "garhad",
+        "nickname": "garhad",
+        "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/162.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 163,
-        "name": "sagas",
-        "nickname": "sagas",
-        "number": 8,
+        "name": "napso",
+        "nickname": "napso",
+        "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/163.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 164,
-        "name": "pedro",
-        "nickname": "pedro",
-        "number": 9,
+        "name": "sagas",
+        "nickname": "sagas",
+        "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/164.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 165,
-        "name": "wesly",
-        "nickname": "wesly",
-        "number": 6,
+        "name": "pedro",
+        "nickname": "pedro",
+        "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/165.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 166,
-        "name": "natho",
-        "nickname": "natho",
-        "number": 99,
+        "name": "wesly",
+        "nickname": "wesly",
+        "number": 6,
         "position": "Player",
         "head_photo": "assets/images/players/heads/166.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 167,
-        "name": "thawcho",
-        "nickname": "thawcho",
-        "number": 17,
+        "name": "natho",
+        "nickname": "natho",
+        "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/167.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 168,
-        "name": "thomas",
-        "nickname": "thomas",
-        "number": 10,
+        "name": "thawcho",
+        "nickname": "thawcho",
+        "number": 17,
         "position": "Player",
         "head_photo": "assets/images/players/heads/168.jpg",
         "bio": "Player for שישי בקטנה"
       },
       {
         "id": 169,
+        "name": "thomas",
+        "nickname": "thomas",
+        "number": 10,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/169.jpg",
+        "bio": "Player for שישי בקטנה"
+      },
+      {
+        "id": 170,
         "name": "itay",
         "nickname": "itay",
         "number": 67,
         "position": "Player",
-        "head_photo": "assets/images/players/heads/169.jpg",
+        "head_photo": "assets/images/players/heads/170.jpg",
         "bio": "Player for שישי בקטנה"
       }
     ]
@@ -684,111 +693,111 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 170,
+        "id": 171,
         "name": "Hatukay",
         "nickname": "Hatukay",
         "number": 94,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/170.jpg",
-        "bio": "Player for ממזרים חסרי כבוד"
-      },
-      {
-        "id": 171,
-        "name": "Yarin",
-        "nickname": "Yarin",
-        "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/171.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 172,
-        "name": "Thawko",
-        "nickname": "Thawko",
-        "number": 9,
+        "name": "Yarin",
+        "nickname": "Yarin",
+        "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/172.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 173,
-        "name": "Ashmoz",
-        "nickname": "Ashmoz",
-        "number": 8,
+        "name": "Thawko",
+        "nickname": "Thawko",
+        "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/173.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 174,
-        "name": "Abate",
-        "nickname": "Abate",
-        "number": 20,
+        "name": "Ashmoz",
+        "nickname": "Ashmoz",
+        "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/174.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 175,
-        "name": "Lt. Aldo Raine",
-        "nickname": "Lt. Aldo Raine",
-        "number": 3,
+        "name": "Abate",
+        "nickname": "Abate",
+        "number": 20,
         "position": "Player",
         "head_photo": "assets/images/players/heads/175.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 176,
-        "name": "Hatokaia",
-        "nickname": "Hatokaia",
-        "number": 2,
+        "name": "Lt. Aldo Raine",
+        "nickname": "Lt. Aldo Raine",
+        "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/176.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 177,
-        "name": "Lawiz",
-        "nickname": "Lawiz",
-        "number": 14,
+        "name": "Hatokaia",
+        "nickname": "Hatokaia",
+        "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/177.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 178,
-        "name": "Ashmoz",
-        "nickname": "Ashmoz",
-        "number": 77,
+        "name": "Lawiz",
+        "nickname": "Lawiz",
+        "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/178.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 179,
-        "name": "Vasilies",
-        "nickname": "Vasilies",
-        "number": 4,
+        "name": "Ashmoz",
+        "nickname": "Ashmoz",
+        "number": 77,
         "position": "Player",
         "head_photo": "assets/images/players/heads/179.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 180,
-        "name": "Tofo",
-        "nickname": "Tofo",
-        "number": 7,
+        "name": "Vasilies",
+        "nickname": "Vasilies",
+        "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/180.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       },
       {
         "id": 181,
+        "name": "Tofo",
+        "nickname": "Tofo",
+        "number": 7,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/181.jpg",
+        "bio": "Player for ממזרים חסרי כבוד"
+      },
+      {
+        "id": 182,
         "name": "Matthew",
         "nickname": "Matthew",
         "number": 10,
         "position": "Player",
-        "head_photo": "assets/images/players/heads/181.jpg",
+        "head_photo": "assets/images/players/heads/182.jpg",
         "bio": "Player for ממזרים חסרי כבוד"
       }
     ]
@@ -800,84 +809,84 @@
     "coach": "Coach",
     "members": [
       {
-        "id": 182,
+        "id": 183,
         "name": "Bazdog",
         "nickname": "Bazdog",
         "number": 1,
-        "position": "Player",
-        "head_photo": "assets/images/players/heads/182.jpg",
-        "bio": "Player for Fc ילדים"
-      },
-      {
-        "id": 183,
-        "name": "Coach",
-        "nickname": "Coach",
-        "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/183.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 184,
-        "name": "Shamsi",
-        "nickname": "Shamsi",
-        "number": 7,
+        "name": "Coach",
+        "nickname": "Coach",
+        "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/184.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 185,
-        "name": "Napso",
-        "nickname": "Napso",
-        "number": 39,
+        "name": "Shamsi",
+        "nickname": "Shamsi",
+        "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/185.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 186,
-        "name": "Gosh",
-        "nickname": "Gosh",
-        "number": 11,
+        "name": "Napso",
+        "nickname": "Napso",
+        "number": 39,
         "position": "Player",
         "head_photo": "assets/images/players/heads/186.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 187,
-        "name": "Shveg",
-        "nickname": "Shveg",
-        "number": 77,
+        "name": "Gosh",
+        "nickname": "Gosh",
+        "number": 11,
         "position": "Player",
         "head_photo": "assets/images/players/heads/187.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 188,
-        "name": "Mogli",
-        "nickname": "Mogli",
-        "number": 67,
+        "name": "Shveg",
+        "nickname": "Shveg",
+        "number": 77,
         "position": "Player",
         "head_photo": "assets/images/players/heads/188.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 189,
-        "name": "Wass",
-        "nickname": "Wass",
-        "number": 4,
+        "name": "Mogli",
+        "nickname": "Mogli",
+        "number": 67,
         "position": "Player",
         "head_photo": "assets/images/players/heads/189.jpg",
         "bio": "Player for Fc ילדים"
       },
       {
         "id": 190,
+        "name": "Wass",
+        "nickname": "Wass",
+        "number": 4,
+        "position": "Player",
+        "head_photo": "assets/images/players/heads/190.jpg",
+        "bio": "Player for Fc ילדים"
+      },
+      {
+        "id": 191,
         "name": "Laoz",
         "nickname": "Laoz",
         "number": 66,
         "position": "Player",
-        "head_photo": "assets/images/players/heads/190.jpg",
+        "head_photo": "assets/images/players/heads/191.jpg",
         "bio": "Player for Fc ילדים"
       }
     ]

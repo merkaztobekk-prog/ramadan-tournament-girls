@@ -1,28 +1,28 @@
 // Auto-generated from standings.json
 window.STANDINGS_DATA = [
   {
-    "team_id": 2,
-    "team_name": "kazan",
-    "played": 1,
-    "won": 1,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 2,
-    "goals_against": 1,
-    "goal_diff": 1,
-    "points": 3
-  },
-  {
     "team_id": 1,
     "team_name": "ניגריה",
-    "played": 1,
-    "won": 1,
+    "played": 0,
+    "won": 0,
     "drawn": 0,
     "lost": 0,
-    "goals_for": 1,
+    "goals_for": 0,
     "goals_against": 0,
-    "goal_diff": 1,
-    "points": 3
+    "goal_diff": 0,
+    "points": 0
+  },
+  {
+    "team_id": 2,
+    "team_name": "פסז'",
+    "played": 0,
+    "won": 0,
+    "drawn": 0,
+    "lost": 0,
+    "goals_for": 0,
+    "goals_against": 0,
+    "goal_diff": 0,
+    "points": 0
   },
   {
     "team_id": 3,
@@ -75,25 +75,25 @@ window.STANDINGS_DATA = [
   {
     "team_id": 7,
     "team_name": "ממזרים חסרי כבוד",
-    "played": 1,
+    "played": 0,
     "won": 0,
     "drawn": 0,
-    "lost": 1,
-    "goals_for": 1,
-    "goals_against": 2,
-    "goal_diff": -1,
+    "lost": 0,
+    "goals_for": 0,
+    "goals_against": 0,
+    "goal_diff": 0,
     "points": 0
   },
   {
     "team_id": 8,
     "team_name": "Fc ילדים",
-    "played": 1,
+    "played": 0,
     "won": 0,
     "drawn": 0,
-    "lost": 1,
+    "lost": 0,
     "goals_for": 0,
-    "goals_against": 1,
-    "goal_diff": -1,
+    "goals_against": 0,
+    "goal_diff": 0,
     "points": 0
   }
 ];
