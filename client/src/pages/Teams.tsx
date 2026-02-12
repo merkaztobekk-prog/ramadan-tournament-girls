@@ -72,8 +72,17 @@ const Teams = () => {
                                                 <div className="row g-3">
                                                     {team.players.map(player => (
                                                         <div key={player.memberId} className="col-6 col-md-4 col-lg-3">
-                                                            <div className="roster-player-card">
-                                                                {player.isCaptain && <span className="badge bg-warning text-dark">קפטן ⭐</span>}
+                                                            <div className="roster-player-card position-relative">
+                                                                {player.isCaptain && <span className="badge bg-warning text-dark position-absolute top-0 start-0 m-2">קפטן ⭐</span>}
+                                                                <img
+                                                                    src={`/${player.head_photo || 'assets/images/players/heads/default.jpg'}`}
+                                                                    alt={player.firstName}
+                                                                    className="rounded-circle mb-2"
+                                                                    style={{ width: '80px', height: '80px', objectFit: 'cover', border: '3px solid #FFD700' }}
+                                                                    onError={(e) => {
+                                                                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/80?text=?';
+                                                                    }}
+                                                                />
                                                                 <div className="fw-bold">{player.firstName} {player.lastName}</div>
                                                                 <div className="text-muted small">{player.nickname}</div>
                                                                 <div className="badge bg-success mt-1">#{player.number}</div>

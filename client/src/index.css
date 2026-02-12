@@ -63,14 +63,16 @@ body {
 
 /* News Banner - Fixed Color */
 .news-banner {
-  background: #ffae00;
-  /* Solid Gold/Yellow */
+  background: #FFD700;
+  /* Standard Gold/Yellow */
   border: 3px solid var(--primary-green);
   padding: 15px 30px;
   margin: 20px auto;
   max-width: 1200px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  /* No bubble look */
+  box-shadow: none;
+  /* Flat look */
   animation: slideIn 0.5s ease-out;
 }
 

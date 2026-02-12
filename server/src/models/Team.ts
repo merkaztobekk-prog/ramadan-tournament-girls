@@ -8,6 +8,8 @@ export interface IPlayer {
     number: number;
     position: string;
     isCaptain: boolean;
+    head_photo?: string;
+    bio?: string;
 }
 
 export interface ITeam extends Document {
@@ -25,6 +27,8 @@ const playerSchema = new Schema<IPlayer>({
     number: { type: Number, required: true },
     position: { type: String, default: '' },
     isCaptain: { type: Boolean, default: false },
+    head_photo: { type: String, default: '' },
+    bio: { type: String, default: '' },
 }, { _id: false });
 
 const teamSchema = new Schema<ITeam>({

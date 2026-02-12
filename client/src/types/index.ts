@@ -6,6 +6,8 @@ export interface Player {
     number: number;
     position: string;
     isCaptain: boolean;
+    head_photo?: string;
+    bio?: string;
 }
 
 export interface Team {

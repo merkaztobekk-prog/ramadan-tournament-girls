@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import { StatsService } from '../services/StatsService';
+import { News } from '../models/News';
+import { Match } from '../models/Match';
 
 export const getStandings = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -33,14 +35,22 @@ export const getPlayerStats = async (req: Request, res: Response): Promise<void>
 
 export const getDashboard = async (req: Request, res: Response): Promise<void> => {
     try {
-        const [standings, topScorers] = await Promise.all([
+        const [standings, topScorers, latestNews, nextMatch, recentMatches] = await Promise.all([
             StatsService.calculateStandings(),
             StatsService.calculateTopScorers(),
+            News.findOne().sort({ priority: -1, date: -1 }),
+            Match.findOne({ date: { $gte: new Date() } }).sort({ date: 1 }),
+            Match.find({ score1: { $ne: null } })
+                .sort({ date: -1 })
+                .limit(5)
         ]);
 
         res.json({
             standings: standings.slice(0, 5),
             topScorer: topScorers[0] || null,
+            latestNews,
+            nextMatch,
+            recentMatches
         });
     } catch (error) {
         console.error('Get dashboard error:', error);
