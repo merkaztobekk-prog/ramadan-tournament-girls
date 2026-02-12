@@ -54,14 +54,23 @@ export const importPlayers = async (req: Request, res: Response): Promise<void> 
             const fullName = `${first_name} ${last_name}`.trim() || nickname;
             const displayNickname = nickname || (first_name || last_name);
 
+            const teamId = teamIdMap[team_name];
+
+            // Logic from import_players.py: member_id = team_id * 100 + number
+            // If number is not provided, we need a fallback, but the Python script implies number is expected or calculated.
+            // Python script: member_id = team_id * 100 + player_num
+
             let playerNumber = 0;
-            try {
-                playerNumber = number ? parseInt(number) : nextMemberId % 100;
-            } catch {
-                playerNumber = nextMemberId % 100;
+            if (number) {
+                playerNumber = parseInt(number);
+            } else {
+                // Fallback if no number in CSV (though current CSV seems to have them)
+                // We need to track used numbers for this team if dynamic assignment is needed.
+                // For now, let's assume number is present or use a simple counter per team.
+                playerNumber = (teamsData[team_name].length + 1);
             }
 
-            const memberId = nextMemberId++;
+            const memberId = (teamId * 100) + playerNumber;
 
             teamsData[team_name].push({
                 memberId: memberId,
