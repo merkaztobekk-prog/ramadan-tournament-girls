@@ -95,5 +95,17 @@ window.STANDINGS_DATA = [
     "goals_against": 0,
     "goal_diff": 0,
     "points": 0
+  },
+  {
+    "team_id": 9,
+    "team_name": "הפטישים",
+    "played": 0,
+    "won": 0,
+    "drawn": 0,
+    "lost": 0,
+    "goals_for": 0,
+    "goals_against": 0,
+    "goal_diff": 0,
+    "points": 0
   }
 ];

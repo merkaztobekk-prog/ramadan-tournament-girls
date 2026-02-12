@@ -46,7 +46,8 @@
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Slightly smaller min-width */
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -54,13 +55,24 @@
 .next-match,
 .top-scorer {
     text-align: center;
+    background: white;
+    /* Ensure background is white */
+    padding: 1.5rem;
+    /* Add padding */
+    height: 100%;
+    /* Equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .next-match h2,
 .top-scorer h2 {
-    color: var(--primary);
+    color: var(--primary-green);
+    /* Use correct var */
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .match-details {

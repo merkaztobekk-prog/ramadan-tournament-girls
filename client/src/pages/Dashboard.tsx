@@ -47,7 +47,7 @@ const Dashboard = () => {
 
             <div className="dashboard-grid">
                 {data.nextMatch && (
-                    <div className="card next-match">
+                    <div className="dashboard-card next-match">
                         <h2>המשחק הבא</h2>
                         <div className="match-details">
                             <div className="match-date">{formatDate(data.nextMatch.date)}</div>
@@ -62,7 +62,7 @@ const Dashboard = () => {
                 )}
 
                 {data.topScorer && (
-                    <div className="card top-scorer">
+                    <div className="dashboard-card top-scorer">
                         <h2>מלך השערים</h2>
                         <div className="scorer-info">
                             <div className="scorer-name">{data.topScorer.playerName}</div>
@@ -76,7 +76,7 @@ const Dashboard = () => {
             </div>
 
             {data.recentMatches && data.recentMatches.length > 0 && (
-                <div className="card recent-matches">
+                <div className="dashboard-card recent-matches">
                     <h2>משחקים אחרונים</h2>
                     <div className="matches-list">
                         {data.recentMatches.slice(0, 5).map((match) => (

@@ -38,7 +38,7 @@
       {
         "id": 103,
         "name": "אנדי לאוז",
-        "nickname": "לאוז",
+        "nickname": "קליבר",
         "number": 13,
         "position": "הגנה",
         "head_photo": "assets/images/players/heads/103.jpg",
@@ -626,6 +626,16 @@
         "head_photo": "assets/images/players/heads/158.jpg",
         "bio": "Player for ביתר רוסייפה",
         "is_captain": false
+      },
+      {
+        "id": 159,
+        "name": "ריאן אשמוז",
+        "nickname": "ashmouz",
+        "number": 70,
+        "position": "בלם",
+        "head_photo": "assets/images/players/heads/159.jpg",
+        "bio": "Player for ביתר רוסייפה",
+        "is_captain": false
       }
     ]
   },
@@ -635,16 +645,6 @@
     "logo": "assets/images/teams/שישי_בקטנה.png",
     "coach": "Coach",
     "members": [
-      {
-        "id": 159,
-        "name": "ריאן אשמוז",
-        "nickname": "ashmouz",
-        "number": 70,
-        "position": "בלם",
-        "head_photo": "assets/images/players/heads/159.jpg",
-        "bio": "Player for שישי בקטנה",
-        "is_captain": false
-      },
       {
         "id": 160,
         "name": "ירין חתוקאי",
@@ -969,6 +969,124 @@
         "position": "מגן",
         "head_photo": "assets/images/players/heads/190.jpg",
         "bio": "Player for Fc ילדים",
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "הפטישים",
+    "logo": "assets/images/teams/הפטישים.png",
+    "coach": "Coach",
+    "members": [
+      {
+        "id": 191,
+        "name": "נאל תעלו",
+        "nickname": "NAL",
+        "number": 4,
+        "position": "שוער",
+        "head_photo": "assets/images/players/heads/191.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 192,
+        "name": "אדם שהין",
+        "nickname": "ADAM",
+        "number": 2,
+        "position": "קשר",
+        "head_photo": "assets/images/players/heads/192.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": true
+      },
+      {
+        "id": 193,
+        "name": "דין יעקוב",
+        "nickname": "DEAN",
+        "number": 11,
+        "position": "בלם",
+        "head_photo": "assets/images/players/heads/193.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 194,
+        "name": "ריאן טקסס",
+        "nickname": "TEXAS",
+        "number": 8,
+        "position": "חלוץ",
+        "head_photo": "assets/images/players/heads/194.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 195,
+        "name": "אדם לאוז",
+        "nickname": "LAOZ",
+        "number": 31,
+        "position": "קשר",
+        "head_photo": "assets/images/players/heads/195.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 196,
+        "name": "הרון בזדוג",
+        "nickname": "PONZI",
+        "number": 666,
+        "position": "חלוץ",
+        "head_photo": "assets/images/players/heads/196.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 197,
+        "name": "נארת שובש",
+        "nickname": "SHOBASH",
+        "number": 9,
+        "position": "בלם",
+        "head_photo": "assets/images/players/heads/197.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 198,
+        "name": "אדם גרכד",
+        "nickname": "GARHAD",
+        "number": 12,
+        "position": "חלוץ",
+        "head_photo": "assets/images/players/heads/198.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 199,
+        "name": "עלי תחאוכו",
+        "nickname": "THAWKO",
+        "number": 19,
+        "position": "חלוץ",
+        "head_photo": "assets/images/players/heads/199.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 200,
+        "name": "שאן גרכד",
+        "nickname": "SHAN",
+        "number": 20,
+        "position": "קשר",
+        "head_photo": "assets/images/players/heads/200.jpg",
+        "bio": "Player for הפטישים",
+        "is_captain": false
+      },
+      {
+        "id": 201,
+        "name": "אסא נאש",
+        "nickname": "NASH",
+        "number": 26,
+        "position": "בלם",
+        "head_photo": "assets/images/players/heads/201.jpg",
+        "bio": "Player for הפטישים",
         "is_captain": false
       }
     ]
