@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { statsAPI } from '../api/client';
-import { DashboardData } from '../types';
+import type { DashboardData } from '../types';
 import './Dashboard.css';
 
 const Dashboard = () => {

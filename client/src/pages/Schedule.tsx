@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { matchesAPI, teamsAPI } from '../api/client';
-import { Match, Team } from '../types';
+import type { Match, Team } from '../types';
 import './Schedule.css';
 
 const Schedule = () => {

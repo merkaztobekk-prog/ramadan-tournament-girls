@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { teamsAPI } from '../api/client';
-import { Team } from '../types';
+import type { Team } from '../types';
 import './Teams.css';
 
 const Teams = () => {

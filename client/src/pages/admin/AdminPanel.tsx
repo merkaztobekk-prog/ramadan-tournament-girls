@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { matchesAPI, newsAPI, authAPI } from '../../api/client';
-import { Match, News } from '../../types';
+import type { Match, News } from '../../types';
 import './AdminPanel.css';
 
 const AdminPanel = () => {

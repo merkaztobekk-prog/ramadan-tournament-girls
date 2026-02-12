@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { statsAPI } from '../api/client';
-import { Standing, TopScorer } from '../types';
+import type { Standing, TopScorer } from '../types';
 import './Stats.css';
 
 const Stats = () => {
