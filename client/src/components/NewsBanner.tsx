@@ -1,0 +1,43 @@
+import { useEffect, useState } from 'react';
+import { newsAPI } from '../api/client';
+import type { News } from '../types';
+
+const NewsBanner = () => {
+    const [newsItem, setNewsItem] = useState<News | null>(null);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                const response = await newsAPI.getAll();
+                const newsData = response.data;
+
+                if (newsData.length > 0) {
+                    // Sort by priority (high first) then date (newest first)
+                    const sortedNews = [...newsData].sort((a, b) => {
+                        if (a.priority === 'high' && b.priority !== 'high') return -1;
+                        if (b.priority === 'high' && a.priority !== 'high') return 1;
+                        return new Date(b.date).getTime() - new Date(a.date).getTime();
+                    });
+                    setNewsItem(sortedNews[0]);
+                }
+            } catch (err) {
+                console.error('Failed to fetch news:', err);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
+    if (!newsItem) return null;
+
+    return (
+        <div className="news-banner">
+            <div id="newsBanner">
+                <h4>{newsItem.title}</h4>
+                <p>{newsItem.message}</p>
+            </div>
+        </div>
+    );
+};
+
+export default NewsBanner;

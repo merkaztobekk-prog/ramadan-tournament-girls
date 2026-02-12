@@ -6,45 +6,54 @@ const Navbar = () => {
     const isActive = (path: string) => location.pathname === path;
 
     return (
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to="/" className="navbar-brand">
-                    🏆 טורניר רמדאן
+        <ul className="nav nav-tabs tournament-tabs justify-content-center" id="mainTabs" role="tablist">
+            <li className="nav-item" role="presentation">
+                <Link
+                    to="/"
+                    className={`nav-link ${isActive('/') ? 'active' : ''}`}
+                    role="tab"
+                >
+                    דף הבית
                 </Link>
-                <div className="navbar-links">
-                    <Link
-                        to="/"
-                        className={`nav-link ${isActive('/') ? 'active' : ''}`}
-                    >
-                        דשבורד
-                    </Link>
-                    <Link
-                        to="/teams"
-                        className={`nav-link ${isActive('/teams') ? 'active' : ''}`}
-                    >
-                        קבוצות
-                    </Link>
-                    <Link
-                        to="/schedule"
-                        className={`nav-link ${isActive('/schedule') ? 'active' : ''}`}
-                    >
-                        לוח משחקים
-                    </Link>
-                    <Link
-                        to="/stats"
-                        className={`nav-link ${isActive('/stats') ? 'active' : ''}`}
-                    >
-                        סטטיסטיקות
-                    </Link>
-                    <Link
-                        to="/admin"
-                        className={`nav-link admin-link ${isActive('/admin') || isActive('/admin/login') ? 'active' : ''}`}
-                    >
-                        ניהול
-                    </Link>
-                </div>
-            </div>
-        </nav>
+            </li>
+            <li className="nav-item" role="presentation">
+                <Link
+                    to="/teams"
+                    className={`nav-link ${isActive('/teams') ? 'active' : ''}`}
+                    role="tab"
+                >
+                    קבוצות
+                </Link>
+            </li>
+            <li className="nav-item" role="presentation">
+                <Link
+                    to="/schedule"
+                    className={`nav-link ${isActive('/schedule') ? 'active' : ''}`}
+                    role="tab"
+                >
+                    משחקים
+                </Link>
+            </li>
+            <li className="nav-item" role="presentation">
+                <Link
+                    to="/stats"
+                    className={`nav-link ${isActive('/stats') ? 'active' : ''}`}
+                    role="tab"
+                >
+                    סטטיסטיקות
+                </Link>
+            </li>
+            <li className="nav-item" role="presentation">
+                <Link
+                    to="/admin"
+                    className={`nav-link ${isActive('/admin') || isActive('/admin/login') ? 'active' : ''}`}
+                    role="tab"
+                >
+                    ניהול
+                </Link>
+            </li>
+        </ul>
+    );
     );
 };
 
