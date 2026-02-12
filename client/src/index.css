@@ -61,17 +61,16 @@ body {
   }
 }
 
-/* News Banner - Carbon Copy from style.css */
+/* News Banner - Vibrant Green/Yellow (Project Theme) */
 .news-banner {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 25px 15px;
-  background: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 100%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: none;
-  border-bottom: 4px solid var(--primary-green);
-  /* Optional: keeping a small border for structure, or remove if strictly matching */
+  background: linear-gradient(90deg, var(--secondary-yellow) 0%, #ffed4e 100%);
+  border: 3px solid var(--primary-green);
+  padding: 15px 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,22 +78,14 @@ body {
   text-align: center;
 }
 
-.news-banner * {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 .news-banner h4 {
   color: var(--primary-green);
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 1.5rem;
-  /* Resetting size */
-  text-transform: none;
-  /* Resetting transform */
-  letter-spacing: normal;
   text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .news-banner p {
@@ -102,8 +93,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   white-space: pre-wrap;
-  text-shadow: none;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 /* Navigation Tabs */
