@@ -16,11 +16,15 @@ export interface StandingsEntry {
 
 export interface TopScorer {
     memberId: number;
-    name: string;
-    team: string;
+    playerName: string;
+    teamName: string;
     position: string;
     goals: number;
 }
+
+// ...
+
+
 
 export interface PlayerStats {
     memberId: number;
@@ -136,8 +140,8 @@ export class StatsService {
                 if (!scorerStats[memberId]) {
                     scorerStats[memberId] = {
                         memberId,
-                        name: memberInfo?.name || 'Unknown',
-                        team: memberInfo?.team || 'Unknown',
+                        playerName: memberInfo?.name || 'Unknown',
+                        teamName: memberInfo?.team || 'Unknown',
                         position: memberInfo?.position || 'Unknown',
                         goals: 0,
                     };

@@ -36,6 +36,16 @@ const Schedule = () => {
         return team ? team.name : `קבוצה ${teamId}`;
     };
 
+    const getPlayerNickname = (memberId: number) => {
+        for (const team of teams) {
+            const player = team.players?.find(p => p.memberId === memberId);
+            if (player) {
+                return player.nickname;
+            }
+        }
+        return '';
+    };
+
     const formatDate = (dateString: string) => {
         return new Date(dateString).toLocaleDateString('he-IL', {
             year: 'numeric',
@@ -110,11 +120,11 @@ const Schedule = () => {
 
                             {match.goals && match.goals.length > 0 && (
                                 <div className="match-goals">
-                                    <h4>שמים:</h4>
+                                    <h4>כובשים:</h4>
                                     <div className="goals-list">
                                         {match.goals.map((goal, idx) => (
                                             <span key={idx} className="goal-item">
-                                                ⚽ שחקן #{goal.memberId} ({goal.minute}')
+                                                {getPlayerNickname(goal.memberId)}
                                             </span>
                                         ))}
                                     </div>

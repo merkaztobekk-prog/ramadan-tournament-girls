@@ -88,7 +88,7 @@ const Stats = () => {
                                 </div>
                                 <div className="scorer-goals">
                                     <span className="goals-count">{scorer.goals}</span>
-                                    <span className="goals-label">⚽</span>
+                                    <span className="goals-label">שערים</span>
                                 </div>
                             </div>
                         ))}

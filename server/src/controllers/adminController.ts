@@ -74,8 +74,8 @@ export const importPlayers = async (req: Request, res: Response): Promise<void> 
 
             teamsData[team_name].push({
                 memberId: memberId,
-                firstName: first_name,
-                lastName: last_name,
+                firstName: first_name || nickname || '-',
+                lastName: last_name || '',
                 nickname: displayNickname,
                 number: playerNumber,
                 position: position || 'Player',
@@ -109,8 +109,8 @@ export const importPlayers = async (req: Request, res: Response): Promise<void> 
         });
 
     } catch (error) {
-        console.error('Import error:', error);
-        res.status(500).json({ error: 'Failed to process CSV' });
+        console.error('Import error details:', error);
+        res.status(500).json({ error: 'Failed to process CSV', details: (error as Error).message });
         // Cleanup on error
         if (req.file) fs.unlinkSync(req.file.path);
     }

@@ -112,6 +112,79 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                 </div>
             </div>
 
+            <div className="card mt-4 p-3 bg-light">
+                <h5>ניהול כובשים</h5>
+                <div className="row g-3 align-items-end">
+                    <div className="col-md-8">
+                        <label className="form-label">בחר מבקיע</label>
+                        <select
+                            className="form-select"
+                            id="goalPlayer"
+                            onChange={(e) => {
+                                if (e.target.value) {
+                                    const memberId = parseInt(e.target.value);
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        goals: [...prev.goals, { memberId, minute: 0 }]
+                                    }));
+                                    e.target.value = ""; // Reset select
+                                }
+                            }}
+                        >
+                            <option value="">בחר שחקן...</option>
+                            <optgroup label="קבוצה 1">
+                                {teams.find(t => t.id === parseInt(formData.team1Id))?.players.map(p => (
+                                    <option key={p.memberId} value={p.memberId}>
+                                        {p.nickname || `${p.firstName} ${p.lastName}`} (#{p.number})
+                                    </option>
+                                ))}
+                            </optgroup>
+                            <optgroup label="קבוצה 2">
+                                {teams.find(t => t.id === parseInt(formData.team2Id))?.players.map(p => (
+                                    <option key={p.memberId} value={p.memberId}>
+                                        {p.nickname || `${p.firstName} ${p.lastName}`} (#{p.number})
+                                    </option>
+                                ))}
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                {formData.goals.length > 0 && (
+                    <div className="mt-3">
+                        <h6>רשימת כובשים:</h6>
+                        <ul className="list-group">
+                            {formData.goals.map((goal, idx) => {
+                                const team1 = teams.find(t => t.id === parseInt(formData.team1Id));
+                                const team2 = teams.find(t => t.id === parseInt(formData.team2Id));
+                                const player = team1?.players.find(p => p.memberId === goal.memberId) ||
+                                    team2?.players.find(p => p.memberId === goal.memberId);
+
+                                return (
+                                    <li key={idx} className="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>
+                                            ⚽ {player ? (player.nickname || `${player.firstName} ${player.lastName}`) : `שחקן ${goal.memberId}`}
+                                        </span>
+                                        <button
+                                            type="button"
+                                            className="btn btn-sm btn-outline-danger"
+                                            onClick={() => {
+                                                setFormData(prev => ({
+                                                    ...prev,
+                                                    goals: prev.goals.filter((_, i) => i !== idx)
+                                                }));
+                                            }}
+                                        >
+                                            מחק
+                                        </button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                )}
+            </div>
+
             <div className="d-flex gap-2 mt-4">
                 <button type="submit" className="btn btn-success flex-grow-1">שמור</button>
                 <button type="button" className="btn btn-secondary" onClick={onCancel}>ביטול</button>

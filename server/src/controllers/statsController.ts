@@ -44,13 +44,20 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
                 .limit(5)
         ]);
 
+        // Create a map of team ID to name from the standings
+        const teamMap = new Map<number, string>();
+        standings.forEach(entry => {
+            teamMap.set(entry.teamId, entry.teamName);
+        });
+
         // Find the date of the next upcoming match
         const nextMatchDate = await Match.findOne({ date: { $gte: new Date() } })
             .sort({ date: 1 })
             .select('date');
 
+        let nextMatches: any[] = []; // Initialize nextMatches here
+
         // Fetch all matches for that specific date (start to end of day)
-        let nextMatches: any[] = [];
         if (nextMatchDate) {
             const date = new Date(nextMatchDate.date);
             const startOfDay = new Date(date.setHours(0, 0, 0, 0));
@@ -60,12 +67,6 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
                 date: { $gte: startOfDay, $lte: endOfDay }
             }).sort({ date: 1 }).lean();
 
-            // Create a map of team ID to name from the standings we already fetched
-            const teamMap = new Map<number, string>();
-            standings.forEach(entry => {
-                teamMap.set(entry.teamId, entry.teamName);
-            });
-
             // Add team names to matches
             nextMatches = rawNextMatches.map(match => ({
                 ...match,
@@ -74,12 +75,18 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
             }));
         }
 
+        const enrichedRecentMatches = recentMatches.map((match: any) => ({
+            ...match.toObject(),
+            team1Name: teamMap.get(match.team1Id) || `קבוצה ${match.team1Id}`,
+            team2Name: teamMap.get(match.team2Id) || `קבוצה ${match.team2Id}`
+        }));
+
         res.json({
             standings: standings.slice(0, 5),
             topScorer: topScorers[0] || null,
             latestNews,
             nextMatches,
-            recentMatches
+            recentMatches: enrichedRecentMatches
         });
     } catch (error) {
         console.error('Get dashboard error:', error);

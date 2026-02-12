@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { matchesAPI, newsAPI, authAPI } from '../../api/client';
-import type { Match, News } from '../../types';
+import { matchesAPI, newsAPI, authAPI, teamsAPI } from '../../api/client';
+import type { Match, News, Team } from '../../types';
 import MatchForm from '../../components/admin/MatchForm';
 import NewsForm from '../../components/admin/NewsForm';
 import './AdminPanel.css';
@@ -9,6 +9,7 @@ import './AdminPanel.css';
 const AdminPanel = () => {
     const [matches, setMatches] = useState<Match[]>([]);
     const [news, setNews] = useState<News[]>([]);
+    const [teams, setTeams] = useState<Team[]>([]);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState<'matches' | 'news' | 'import'>('matches');
     const [file, setFile] = useState<File | null>(null);
@@ -28,9 +29,10 @@ const AdminPanel = () => {
             alert('ייבוא בוצע בהצלחה!');
             setFile(null);
             // Refresh logic if needed
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
-            alert('שגיאה בייבוא הקובץ');
+            const message = err.response?.data?.details || err.response?.data?.error || 'שגיאה בייבוא הקובץ';
+            alert(message);
         } finally {
             setUploading(false);
         }
@@ -46,12 +48,15 @@ const AdminPanel = () => {
         const fetchData = async () => {
             try {
                 await authAPI.getCurrentUser();
-                const [matchesRes, newsRes] = await Promise.all([
+                const [matchesRes, newsRes, teamsRes] = await Promise.all([
                     matchesAPI.getAll(),
-                    newsAPI.getAll()
+                    newsAPI.getAll(),
+                    teamsAPI.getAll()
                 ]);
-                setMatches(matchesRes.data);
+                const matchesSorted = matchesRes.data.sort((a: Match, b: Match) => new Date(a.date).getTime() - new Date(b.date).getTime());
+                setMatches(matchesSorted);
                 setNews(newsRes.data);
+                setTeams(teamsRes.data);
             } catch (err) {
                 console.error(err);
                 localStorage.removeItem('token');
@@ -94,16 +99,14 @@ const AdminPanel = () => {
     const [showMatchForm, setShowMatchForm] = useState(false);
     const [showNewsForm, setShowNewsForm] = useState(false);
 
-    // ... (rest of imports and state)
-
     const handleSaveMatch = async (data: any) => {
         try {
             if (editingMatch) {
                 await matchesAPI.update(editingMatch.id, data);
-                setMatches(matches.map(m => m.id === editingMatch.id ? { ...m, ...data } : m));
+                setMatches(matches.map(m => m.id === editingMatch.id ? { ...m, ...data } : m).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
             } else {
                 const res = await matchesAPI.create(data);
-                setMatches([res.data, ...matches].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+                setMatches([...matches, res.data].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
             }
             setShowMatchForm(false);
             setEditingMatch(null);
@@ -138,6 +141,11 @@ const AdminPanel = () => {
     const startEditNews = (item: News) => {
         setEditingNews(item);
         setShowNewsForm(true);
+    };
+
+    const getTeamName = (teamId: number) => {
+        const team = teams.find(t => t.id === teamId);
+        return team ? team.name : `קבוצה ${teamId}`;
     };
 
     if (loading) return <div className="loading">טוען...</div>;
@@ -187,7 +195,7 @@ const AdminPanel = () => {
                                     <div key={match._id} className="item">
                                         <div className="item-info">
                                             <strong>
-                                                קבוצה {match.team1Id} vs קבוצה {match.team2Id}
+                                                {getTeamName(match.team1Id)} vs {getTeamName(match.team2Id)}
                                             </strong>
                                             <span>{new Date(match.date).toLocaleDateString('he-IL')}</span>
                                             <span>תוצאה: {match.score1 ?? '-'} : {match.score2 ?? '-'}</span>

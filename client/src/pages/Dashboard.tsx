@@ -59,20 +59,8 @@ const Dashboard = () => {
                             </div>
                         </div>
                     )}
-
-                    {data.topScorer && (
-                        <div className="dashboard-card top-scorer">
-                            <h2>מלך השערים</h2>
-                            <div className="scorer-info">
-                                <div className="scorer-name">{data.topScorer.playerName}</div>
-                                <div className="scorer-team">{data.topScorer.teamName}</div>
-                                <div className="scorer-goals">
-                                    ⚽ {data.topScorer.goals} שערים
-                                </div>
-                            </div>
-                        </div>
-                    )}
                 </div>
+
 
                 {data.recentMatches && data.recentMatches.length > 0 && (
                     <div className="dashboard-card recent-matches mt-4">
@@ -82,12 +70,25 @@ const Dashboard = () => {
                                 <div key={match._id} className="match-item">
                                     <span className="match-date">{formatDate(match.date)}</span>
                                     <div className="match-score">
-                                        <span>קבוצה {match.team1Id}</span>
+                                        <span>{match.team1Name || `קבוצה ${match.team1Id}`}</span>
                                         <span className="score">{match.score1} - {match.score2}</span>
-                                        <span>קבוצה {match.team2Id}</span>
+                                        <span>{match.team2Name || `קבוצה ${match.team2Id}`}</span>
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                )}
+                {data.topScorer && (
+                    <div className="dashboard-card top-scorer">
+                        <h2>מלך השערים</h2>
+                        <div className="scorer-info">
+                            <div className="scorer-name">{data.topScorer.playerName}</div>
+                            <div className="scorer-team">{data.topScorer.teamName}</div>
+                            <div className="scorer-goals">
+                                <span className="goals-count">{data.topScorer.goals}</span>
+                                <span className="goals-label">שערים</span>
+                            </div>
                         </div>
                     </div>
                 )}

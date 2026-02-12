@@ -14,7 +14,7 @@
 .login-card h1 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--primary);
+    color: var(--text);
 }
 
 .form-group {
