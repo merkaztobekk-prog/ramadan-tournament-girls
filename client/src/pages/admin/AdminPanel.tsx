@@ -10,8 +10,31 @@ const AdminPanel = () => {
     const [matches, setMatches] = useState<Match[]>([]);
     const [news, setNews] = useState<News[]>([]);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<'matches' | 'news'>('matches');
+    const [activeTab, setActiveTab] = useState<'matches' | 'news' | 'import'>('matches');
+    const [file, setFile] = useState<File | null>(null);
+    const [uploading, setUploading] = useState(false);
     const navigate = useNavigate();
+
+    const handleFileUpload = async () => {
+        if (!file) return;
+        if (!confirm('פעולה זו תמחק ותחליף את כל נתוני הקבוצות. להמשיך?')) return;
+
+        setUploading(true);
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            await import('../../api/client').then(m => m.adminAPI.uploadPlayers(formData));
+            alert('ייבוא בוצע בהצלחה!');
+            setFile(null);
+            // Refresh logic if needed
+        } catch (err) {
+            console.error(err);
+            alert('שגיאה בייבוא הקובץ');
+        } finally {
+            setUploading(false);
+        }
+    };
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -141,6 +164,12 @@ const AdminPanel = () => {
                 >
                     ניהול חדשות ({news.length})
                 </button>
+                <button
+                    className={`tab ${activeTab === 'import' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('import')}
+                >
+                    ייבוא שחקנים
+                </button>
             </div>
 
             {activeTab === 'matches' && (
@@ -216,6 +245,39 @@ const AdminPanel = () => {
                             onCancel={() => { setShowNewsForm(false); setEditingNews(null); }}
                         />
                     )}
+                </div>
+            )}
+
+            {activeTab === 'import' && (
+                <div className="tab-content">
+                    <div className="card">
+                        <h2>ייבוא שחקנים</h2>
+                        <div className="p-4 text-center">
+                            <p className="mb-4">
+                                העלה קובץ CSV עם נתוני שחקנים לעדכון מהיר של כל הקבוצות.<br />
+                                <strong>שים לב: פעולה זו תמחק את כל הקבוצות והשחקנים הקיימים ותחליף אותם בנתונים החדשים!</strong>
+                            </p>
+
+                            <div className="mb-3">
+                                <label htmlFor="csvFile" className="form-label">קובץ CSV (players-data.csv)</label>
+                                <input
+                                    className="form-control"
+                                    type="file"
+                                    id="csvFile"
+                                    accept=".csv"
+                                    onChange={(e) => setFile(e.target.files?.[0] || null)}
+                                />
+                            </div>
+
+                            <button
+                                onClick={handleFileUpload}
+                                className="btn btn-success btn-lg mt-3"
+                                disabled={!file || uploading}
+                            >
+                                {uploading ? 'מעלה...' : 'ייבא שחקנים'}
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

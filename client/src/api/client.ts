@@ -51,4 +51,10 @@ export const authAPI = {
     getCurrentUser: () => api.get('/auth/me'),
 };
 
+export const adminAPI = {
+    uploadPlayers: (formData: FormData) => api.post('/admin/import-players', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+    }),
+};
+
 export default api;

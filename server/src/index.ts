@@ -11,6 +11,7 @@ import teamRoutes from './routes/teams';
 import matchRoutes from './routes/matches';
 import newsRoutes from './routes/news';
 import statsRoutes from './routes/stats';
+import adminRoutes from './routes/admin';
 
 const app = express();
 
@@ -42,6 +43,7 @@ app.use('/api/teams', teamRoutes);
 app.use('/api/matches', matchRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Error handler
 app.use(errorHandler);
