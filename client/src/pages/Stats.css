@@ -1,0 +1,150 @@
+.stats-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.standings-table h2,
+.top-scorers-list h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--bg);
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    border-bottom: 2px solid var(--border);
+}
+
+td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+    background: var(--bg);
+}
+
+tr.qualified {
+    background: linear-gradient(to left, transparent, #dbeafe);
+}
+
+.position {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.team-name {
+    text-align: right;
+    font-weight: 600;
+}
+
+.points {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.positive {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.negative {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.scorers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.scorer-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--bg);
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+.scorer-item:hover {
+    transform: translateX(-4px);
+    background: #e5e7eb;
+}
+
+.scorer-rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    min-width: 50px;
+    text-align: center;
+}
+
+.scorer-details {
+    flex: 1;
+}
+
+.scorer-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.scorer-team {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.scorer-goals {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.goals-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.goals-label {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 968px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.875rem;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 0.25rem;
+    }
+}

@@ -727,13 +727,5 @@ window.PLAYER_STATS_DATA = [
     "yellow_cards": 0,
     "red_cards": 0,
     "games_played": 0
-  },
-  {
-    "member_id": 191,
-    "goals": 0,
-    "assists": 0,
-    "yellow_cards": 0,
-    "red_cards": 0,
-    "games_played": 0
   }
 ];

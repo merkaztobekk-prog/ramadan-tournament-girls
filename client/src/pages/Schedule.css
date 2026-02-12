@@ -1,0 +1,136 @@
+.schedule-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.match-card {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.match-card:hover {
+    transform: translateX(-4px);
+}
+
+.match-card.upcoming {
+    border-right: 4px solid var(--warning);
+}
+
+.match-card.live {
+    border-right: 4px solid var(--secondary);
+}
+
+.match-card.finished {
+    border-right: 4px solid var(--primary);
+}
+
+.match-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.match-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.match-status.upcoming {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.match-status.live {
+    background: #d1fae5;
+    color: #065f46;
+    animation: pulse 2s infinite;
+}
+
+.match-status.finished {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.match-teams-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.team-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.team-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.team-score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.vs-divider {
+    font-weight: bold;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.match-goals {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.match-goals h4 {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.goals-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.goal-item {
+    background: var(--bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .match-teams-score {
+        flex-direction: column;
+    }
+
+    .team-side {
+        width: 100%;
+    }
+
+    .vs-divider {
+        transform: rotate(90deg);
+    }
+}
