@@ -21,7 +21,7 @@ window.BRACKET_DATA = {
       "team1_name": "kazan",
       "team2_seed": 7,
       "team2_id": 7,
-      "team2_name": "ממזרים חסרי כבוד",
+      "team2_name": "ספטרק נאלציק",
       "winner_id": null
     },
     {

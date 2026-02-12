@@ -74,7 +74,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 7,
-    "team_name": "ממזרים חסרי כבוד",
+    "team_name": "ספטרק נאלציק",
     "played": 0,
     "won": 0,
     "drawn": 0,

@@ -750,8 +750,8 @@ window.TEAMS_DATA = [
   },
   {
     "id": 7,
-    "name": "ממזרים חסרי כבוד",
-    "logo": "assets/images/teams/ממזרים_חסרי_כבוד.png",
+    "name": "ספטרק נאלציק",
+    "logo": "assets/images/teams/ספטרק_נאלציק.png",
     "coach": "Coach",
     "members": [
       {
@@ -761,7 +761,7 @@ window.TEAMS_DATA = [
         "number": 94,
         "position": "Player",
         "head_photo": "assets/images/players/heads/170.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": true
       },
       {
@@ -771,7 +771,7 @@ window.TEAMS_DATA = [
         "number": 99,
         "position": "Player",
         "head_photo": "assets/images/players/heads/171.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -781,7 +781,7 @@ window.TEAMS_DATA = [
         "number": 9,
         "position": "Player",
         "head_photo": "assets/images/players/heads/172.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -791,7 +791,7 @@ window.TEAMS_DATA = [
         "number": 8,
         "position": "Player",
         "head_photo": "assets/images/players/heads/173.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -801,7 +801,7 @@ window.TEAMS_DATA = [
         "number": 20,
         "position": "Player",
         "head_photo": "assets/images/players/heads/174.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -811,7 +811,7 @@ window.TEAMS_DATA = [
         "number": 3,
         "position": "Player",
         "head_photo": "assets/images/players/heads/175.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -821,7 +821,7 @@ window.TEAMS_DATA = [
         "number": 2,
         "position": "Player",
         "head_photo": "assets/images/players/heads/176.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -831,7 +831,7 @@ window.TEAMS_DATA = [
         "number": 14,
         "position": "Player",
         "head_photo": "assets/images/players/heads/177.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -841,7 +841,7 @@ window.TEAMS_DATA = [
         "number": 77,
         "position": "Player",
         "head_photo": "assets/images/players/heads/178.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -851,7 +851,7 @@ window.TEAMS_DATA = [
         "number": 4,
         "position": "Player",
         "head_photo": "assets/images/players/heads/179.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -861,7 +861,7 @@ window.TEAMS_DATA = [
         "number": 7,
         "position": "Player",
         "head_photo": "assets/images/players/heads/180.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       },
       {
@@ -871,7 +871,7 @@ window.TEAMS_DATA = [
         "number": 10,
         "position": "Player",
         "head_photo": "assets/images/players/heads/181.jpg",
-        "bio": "Player for ממזרים חסרי כבוד",
+        "bio": "Player for ספטרק נאלציק",
         "is_captain": false
       }
     ]
