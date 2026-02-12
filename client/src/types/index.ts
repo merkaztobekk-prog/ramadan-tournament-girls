@@ -33,6 +33,8 @@ export interface Match {
     team2Id: number;
     score1: number;
     score2: number;
+    team1Name?: string;
+    team2Name?: string;
     goals: Goal[];
     createdAt: string;
 }
@@ -68,7 +70,7 @@ export interface TopScorer {
 }
 
 export interface DashboardData {
-    nextMatch: Match | null;
+    nextMatches: Match[];
     recentMatches: Match[];
     topScorer: TopScorer | null;
     latestNews: News | null;

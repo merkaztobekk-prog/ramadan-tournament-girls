@@ -4,17 +4,11 @@
 }
 
 .news-banner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 100%);
     color: white;
     padding: 1.5rem;
-    border-radius: 12px;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-lg);
-}
-
-.news-banner.high-priority {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -52,53 +46,104 @@
     margin-bottom: 2rem;
 }
 
-.next-match,
 .top-scorer {
     text-align: center;
     background: white;
-    /* Ensure background is white */
     padding: 1.5rem;
-    /* Add padding */
     height: 100%;
-    /* Equal height */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.next-match h2,
 .top-scorer h2 {
     color: var(--primary-green);
-    /* Use correct var */
     margin-bottom: 1rem;
     font-size: 1.25rem;
     font-weight: 700;
 }
 
-.match-details {
+.next-matches-card {
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+.next-matches-card h2 {
+    background-color: #2e7d32;
+    /* Green header */
+    color: white;
+    margin: 0;
     padding: 1rem;
-}
-
-.match-date,
-.match-location {
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-}
-
-.match-teams {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    text-align: right;
     font-size: 1.25rem;
     font-weight: bold;
 }
 
-.vs {
+.next-matches-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.upcoming-match-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        "team-right vs team-left"
+        "meta meta meta";
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.upcoming-match-item:last-child {
+    border-bottom: none;
+}
+
+.team-right {
+    grid-area: team-right;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.team-left {
+    grid-area: team-left;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.match-vs {
+    grid-area: vs;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.vs-badge {
     color: var(--text-light);
-    font-size: 0.875rem;
+    /* Yellow/Orange */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.match-meta {
+    grid-area: meta;
+    text-align: left;
+    /* Explicitly left align */
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    direction: rtl;
+    /* Keep RTL for Hebrew text */
+}
+
+.match-date,
+.match-location {
+    display: block;
+    line-height: 1.4;
+    text-align: left;
+    /* Ensure text aligns to the left */
 }
 
 .scorer-info {

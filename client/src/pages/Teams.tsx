@@ -79,10 +79,10 @@ const Teams = () => {
                                                                 onClick={(e) => { e.stopPropagation(); setSelectedPlayer(player); }}
                                                                 style={{ cursor: 'pointer' }}
                                                             >
-                                                                {player.isCaptain && <span className="badge bg-warning text-dark position-absolute top-0 start-0 m-2">קפטן ⭐</span>}
-                                                                <div className="fw-bold">{player.firstName} {player.lastName}</div>
-                                                                <div className="text-muted small">{player.nickname}</div>
-                                                                <div className="badge bg-success mt-1">#{player.number}</div>
+                                                                {player.isCaptain && <span className="badge text-dark position-absolute top-0 start-0 m-2">⭐</span>}
+                                                                <div className="fw-bold">{player.nickname}</div>
+                                                                <div className="text-muted small">{player.firstName} {player.lastName}</div>
+                                                                <div className="badge bg-success mt-1">{player.number}</div>
                                                                 <div className="small text-secondary">{player.position}</div>
                                                             </div>
                                                         </div>
@@ -114,12 +114,15 @@ const Teams = () => {
                                     className="rounded-circle mb-3 border border-3 border-warning"
                                     style={{ width: '120px', height: '120px', objectFit: 'cover' }}
                                     onError={(e) => {
-                                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/120?text=?';
+                                        const target = e.target as HTMLImageElement;
+                                        target.onerror = null;
+                                        // Simple gray placeholder SVG as data URI
+                                        target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2NjYyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUwIiBmaWxsPSIjNjY2Ij4/PC90ZXh0Pjwvc3ZnPg==';
                                     }}
                                 />
                                 <h4>{selectedPlayer.nickname}</h4>
                                 <div className="d-flex justify-content-center gap-2 mb-3">
-                                    <span className="badge bg-success fs-6">#{selectedPlayer.number}</span>
+                                    <span className="badge bg-success fs-6">{selectedPlayer.number}</span>
                                     <span className="badge bg-secondary fs-6">{selectedPlayer.position}</span>
                                     {selectedPlayer.isCaptain && <span className="badge bg-warning text-dark fs-6">קפטן</span>}
                                 </div>

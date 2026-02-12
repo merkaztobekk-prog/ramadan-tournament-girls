@@ -45,12 +45,29 @@ const Schedule = () => {
     };
 
     const getMatchStatus = (match: Match) => {
+        if (match.score1 != null && match.score2 != null) return 'finished';
+
         const matchDate = new Date(match.date);
         const now = new Date();
 
-        if (matchDate > now) return 'upcoming';
-        if (match.score1 !== undefined && match.score2 !== undefined) return 'finished';
-        return 'live';
+        // Get current time in Jerusalem
+        const jerusalemNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Jerusalem" }));
+
+        // Check if it's the same day
+        const isSameDay = matchDate.getDate() === jerusalemNow.getDate() &&
+            matchDate.getMonth() === jerusalemNow.getMonth() &&
+            matchDate.getFullYear() === jerusalemNow.getFullYear();
+
+        if (isSameDay) {
+            // Live if it's 20:00 or later
+            if (jerusalemNow.getHours() >= 20) return 'live';
+            return 'upcoming';
+        }
+
+        // If match date is in the past, consider it finished (or pending, but 'finished' styles it gray usually)
+        if (matchDate < jerusalemNow) return 'finished';
+
+        return 'upcoming';
     };
 
     const sortedMatches = [...matches].sort((a, b) =>
@@ -67,7 +84,7 @@ const Schedule = () => {
                         <div key={match._id} className={`match-card card ${status}`}>
                             <div className="match-meta">
                                 <span className="match-date">{formatDate(match.date)}</span>
-                                <span className="match-location">📍 {match.location}</span>
+                                <span className="match-location">{match.location}</span>
                                 <span className={`match-status ${status}`}>
                                     {status === 'upcoming' ? 'עתיד' : status === 'live' ? 'בהתקדמות' : 'הסתיים'}
                                 </span>

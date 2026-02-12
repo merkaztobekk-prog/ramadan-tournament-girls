@@ -33,33 +33,29 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-page">
-            <h1 className="page-title text-center my-4">דשבורד טורניר</h1>
-
-            {data.latestNews && (
-                <div className={`news-banner ${data.latestNews.priority === 'high' ? 'high-priority' : ''}`}>
-                    <div className="container">
-                        <div className="news-content">
-                            <h3>{data.latestNews.title}</h3>
-                            <p>{data.latestNews.message}</p>
-                            <span className="news-date">{formatDate(data.latestNews.date)}</span>
-                        </div>
-                    </div>
-                </div>
-            )}
-
             <div className="container">
                 <div className="dashboard-grid">
-                    {data.nextMatch && (
-                        <div className="dashboard-card next-match">
-                            <h2>המשחק הבא</h2>
-                            <div className="match-details">
-                                <div className="match-date">{formatDate(data.nextMatch.date)}</div>
-                                <div className="match-location">📍 {data.nextMatch.location}</div>
-                                <div className="match-teams">
-                                    <span className="team">קבוצה {data.nextMatch.team1Id}</span>
-                                    <span className="vs">נגד</span>
-                                    <span className="team">קבוצה {data.nextMatch.team2Id}</span>
-                                </div>
+                    {data.nextMatches && data.nextMatches.length > 0 && (
+                        <div className="dashboard-card next-matches-card">
+                            <h2>המשחקים הבאים</h2>
+                            <div className="next-matches-list">
+                                {data.nextMatches.map((match) => (
+                                    <div key={match._id} className="upcoming-match-item">
+                                        <div className="team-right">
+                                            <span className="team-name">{match.team1Name || `קבוצה ${match.team1Id}`}</span>
+                                        </div>
+                                        <div className="match-vs">
+                                            <span className="vs-badge">נגד</span>
+                                        </div>
+                                        <div className="team-left">
+                                            <span className="team-name">{match.team2Name || `קבוצה ${match.team2Id}`}</span>
+                                        </div>
+                                        <div className="match-meta">
+                                            <div className="match-date">{formatDate(match.date)}</div>
+                                            <div className="match-location">מיקום: {match.location}</div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     )}

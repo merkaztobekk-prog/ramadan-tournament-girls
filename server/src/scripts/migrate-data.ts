@@ -56,6 +56,7 @@ async function migrateData() {
                     number: member.number,
                     position: member.position || '',
                     isCaptain: member.is_captain || false,
+                    bio: member.bio || '',
                 };
             }),
         }));
