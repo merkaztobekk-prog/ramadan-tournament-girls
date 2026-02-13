@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import NewsBanner from './components/NewsBanner';
 import './App.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   return (
     <Router>
@@ -42,6 +44,7 @@ function App() {
             </main>
           </div>
         </div>
+        <Analytics />
       </div>
     </Router>
   );
