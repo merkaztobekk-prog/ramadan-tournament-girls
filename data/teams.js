@@ -237,7 +237,7 @@ window.TEAMS_DATA = [
         "name": "איסמאעיל שוגן",
         "nickname": "שוגן",
         "number": 55,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/121.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": true
@@ -247,7 +247,7 @@ window.TEAMS_DATA = [
         "name": "אסלאם סגס",
         "nickname": "סגס",
         "number": 25,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/122.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -257,7 +257,7 @@ window.TEAMS_DATA = [
         "name": "אסלאן נאש",
         "nickname": "נאש",
         "number": 17,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/123.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -267,7 +267,7 @@ window.TEAMS_DATA = [
         "name": "הארון פייסל",
         "nickname": "פייסל",
         "number": 2,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/124.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -277,7 +277,7 @@ window.TEAMS_DATA = [
         "name": "יוסף הזאר",
         "nickname": "הזאר",
         "number": 7,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/125.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -287,7 +287,7 @@ window.TEAMS_DATA = [
         "name": "נור חתוקאי",
         "nickname": "חתוקאי",
         "number": 21,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/126.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -297,7 +297,7 @@ window.TEAMS_DATA = [
         "name": "נורדין שמסי",
         "nickname": "שמסי",
         "number": 10,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/127.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -307,7 +307,7 @@ window.TEAMS_DATA = [
         "name": "סאם לבאי",
         "nickname": "לבאי",
         "number": 22,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/128.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -317,7 +317,7 @@ window.TEAMS_DATA = [
         "name": "סאם תחאוכו",
         "nickname": "תחאוכו",
         "number": 11,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/129.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -327,7 +327,7 @@ window.TEAMS_DATA = [
         "name": "עות'מאן שוגן",
         "nickname": "שוגן",
         "number": 3,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/130.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -337,7 +337,7 @@ window.TEAMS_DATA = [
         "name": "תאיימז נאפסו",
         "nickname": "נאפסו",
         "number": 5,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/131.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -347,7 +347,7 @@ window.TEAMS_DATA = [
         "name": "יוסף שוגן",
         "nickname": "שוגן",
         "number": 30,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/132.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -357,7 +357,7 @@ window.TEAMS_DATA = [
         "name": "נארת שומאף",
         "nickname": "שומאף",
         "number": 41,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/133.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -367,7 +367,7 @@ window.TEAMS_DATA = [
         "name": "נורדין שומאף",
         "nickname": "שומאף",
         "number": 9,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/134.jpg",
         "bio": "משחק בעד Dar al fajir Fc",
         "is_captain": false
@@ -761,7 +761,7 @@ window.TEAMS_DATA = [
         "name": "סינאל בושנק",
         "nickname": "Boshnak",
         "number": 5,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/171.jpg",
         "bio": "משחק בעד שישי בקטנה",
         "is_captain": false
@@ -809,7 +809,7 @@ window.TEAMS_DATA = [
         "name": "Ashmoz",
         "nickname": "Ashmoz",
         "number": 8,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/175.jpg",
         "bio": "משחק בעד ספטרק נאלציק",
         "is_captain": false
@@ -839,7 +839,7 @@ window.TEAMS_DATA = [
         "name": "Hatokaia",
         "nickname": "Hatokaia",
         "number": 2,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/178.jpg",
         "bio": "משחק בעד ספטרק נאלציק",
         "is_captain": false
@@ -879,7 +879,7 @@ window.TEAMS_DATA = [
         "name": "תאופיק חטוקאי",
         "nickname": "Tofo",
         "number": 7,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/182.jpg",
         "bio": "משחק בעד ספטרק נאלציק",
         "is_captain": false
@@ -889,7 +889,7 @@ window.TEAMS_DATA = [
         "name": "מתן נאבסו",
         "nickname": "Matthew",
         "number": 10,
-        "position": "מחמחם ספסל",
+        "position": "מחמם ספסל",
         "head_photo": "assets/images/players/heads/183.jpg",
         "bio": "משחק בעד ספטרק נאלציק",
         "is_captain": false
