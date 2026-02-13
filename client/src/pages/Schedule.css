@@ -122,15 +122,15 @@
 }
 
 @media (max-width: 768px) {
+    .match-card {
+        padding: 0.5rem;
+    }
+
+    .team-name {
+        font-size: 1rem;
+    }
+
     .match-teams-score {
-        flex-direction: column;
-    }
-
-    .team-side {
-        width: 100%;
-    }
-
-    .vs-divider {
-        transform: rotate(90deg);
+        gap: 0.5rem;
     }
 }
