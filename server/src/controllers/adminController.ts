@@ -78,9 +78,9 @@ export const importPlayers = async (req: Request, res: Response): Promise<void> 
                 lastName: last_name || '',
                 nickname: displayNickname,
                 number: playerNumber,
-                position: position || 'Player',
+                position: position || 'מחמם ספסל',
                 isCaptain: captain === '1',
-                bio: bio || `Player for ${team_name}`
+                bio: bio || `משחק בעד ${team_name}`
             });
         }
 
