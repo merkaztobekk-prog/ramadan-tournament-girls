@@ -10,7 +10,7 @@ window.BRACKET_DATA = {
       "team1_name": "ניגריה",
       "team2_seed": 8,
       "team2_id": 8,
-      "team2_name": "Fc ילדים",
+      "team2_name": "ספטרק נאלציק",
       "winner_id": null
     },
     {
@@ -21,7 +21,7 @@ window.BRACKET_DATA = {
       "team1_name": "kazan",
       "team2_seed": 7,
       "team2_id": 7,
-      "team2_name": "ספטרק נאלציק",
+      "team2_name": "שישי בקטנה",
       "winner_id": null
     },
     {
@@ -29,10 +29,10 @@ window.BRACKET_DATA = {
       "match_id": 203,
       "team1_seed": 3,
       "team1_id": 3,
-      "team1_name": "Dar al fajir Fc",
+      "team1_name": "Kazan",
       "team2_seed": 6,
       "team2_id": 6,
-      "team2_name": "שישי בקטנה",
+      "team2_name": "ביתר רוסייפה",
       "winner_id": null
     },
     {
@@ -40,10 +40,10 @@ window.BRACKET_DATA = {
       "match_id": 204,
       "team1_seed": 4,
       "team1_id": 4,
-      "team1_name": "המוסד לביטוח לאומי",
+      "team1_name": "Dar al fajir Fc",
       "team2_seed": 5,
       "team2_id": 5,
-      "team2_name": "ביתר רוסייפה",
+      "team2_name": "המוסד לביטוח לאומי",
       "winner_id": null
     }
   ],

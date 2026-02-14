@@ -26,7 +26,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 3,
-    "team_name": "Dar al fajir Fc",
+    "team_name": "Kazan",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -38,7 +38,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 4,
-    "team_name": "המוסד לביטוח לאומי",
+    "team_name": "Dar al fajir Fc",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -50,7 +50,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 5,
-    "team_name": "ביתר רוסייפה",
+    "team_name": "המוסד לביטוח לאומי",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -62,7 +62,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 6,
-    "team_name": "שישי בקטנה",
+    "team_name": "ביתר רוסייפה",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -74,7 +74,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 7,
-    "team_name": "ספטרק נאלציק",
+    "team_name": "שישי בקטנה",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -86,7 +86,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 8,
-    "team_name": "Fc ילדים",
+    "team_name": "ספטרק נאלציק",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -98,6 +98,18 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 9,
+    "team_name": "Fc ילדים",
+    "played": 0,
+    "won": 0,
+    "drawn": 0,
+    "lost": 0,
+    "goals_for": 0,
+    "goals_against": 0,
+    "goal_diff": 0,
+    "points": 0
+  },
+  {
+    "team_id": 10,
     "team_name": "הפטישים",
     "played": 0,
     "won": 0,
