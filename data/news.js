@@ -2,8 +2,8 @@
 window.NEWS_DATA = [
   {
     "id": 1,
-    "title": "טורניר יוצא לדרך!",
-    "message": "יום שישי 20/02 יתקיים משחק ראשון של הטורניר במרכז צעירים \n9 קבוצות \n104 שחקנים\n36 משחקים עד לגמר הגדול ! \nמי הקבוצה שהולכת לנצח?! 🏆 \n\nמחכים לכם כול סופש",
+    "title": "לאתר מעודכן",
+    "message": "https://ramadan-tournament-client.vercel.app/",
     "date": "2026-02-20",
     "priority": "high"
   }

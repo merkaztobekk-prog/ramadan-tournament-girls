@@ -6,7 +6,7 @@ import { config } from '../config/env';
 import { User } from '../models/User';
 import { Team } from '../models/Team';
 import { Match } from '../models/Match';
-import { News } from '../models/News';
+
 
 const dataDir = path.join(__dirname, '..', '..', '..', 'data');
 
@@ -22,7 +22,7 @@ async function migrateData() {
         await User.deleteMany({});
         await Team.deleteMany({});
         await Match.deleteMany({});
-        await News.deleteMany({});
+
         console.log('🗑️  Cleared existing data');
 
         // Create admin user
@@ -81,16 +81,7 @@ async function migrateData() {
         await Match.insertMany(matchesWithDates);
         console.log(`✅ Imported ${matchesData.length} matches`);
 
-        // Import news
-        const newsData = JSON.parse(
-            fs.readFileSync(path.join(dataDir, 'news.json'), 'utf-8')
-        );
-        const newsWithDates = newsData.map((item: any) => ({
-            ...item,
-            date: new Date(item.date),
-        }));
-        await News.insertMany(newsWithDates);
-        console.log(`✅ Imported ${newsData.length} news items`);
+
 
         console.log('✨ Migration completed successfully!');
         process.exit(0);
