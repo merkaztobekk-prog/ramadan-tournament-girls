@@ -35,19 +35,18 @@ export const getPlayerStats = async (req: Request, res: Response): Promise<void>
 
 export const getDashboard = async (req: Request, res: Response): Promise<void> => {
     try {
-        const [standings, topScorers, latestNews, recentMatches] = await Promise.all([
-            StatsService.calculateStandings(),
+        const [teams, topScorers, recentMatches] = await Promise.all([
+            import('../models/Team').then(m => m.Team.find().select('id name')),
             StatsService.calculateTopScorers(),
-            News.findOne().sort({ priority: -1, date: -1 }),
             Match.find({ score1: { $ne: null } })
                 .sort({ date: -1 })
                 .limit(5)
         ]);
 
-        // Create a map of team ID to name from the standings
+        // Create a map of team ID to name for match enrichment
         const teamMap = new Map<number, string>();
-        standings.forEach(entry => {
-            teamMap.set(entry.teamId, entry.teamName);
+        teams.forEach(team => {
+            teamMap.set(team.id, team.name);
         });
 
         // Find the date of the next upcoming match
@@ -55,9 +54,9 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
             .sort({ date: 1 })
             .select('date');
 
-        let nextMatches: any[] = []; // Initialize nextMatches here
+        let nextMatches: any[] = [];
 
-        // Fetch all matches for that specific date (start to end of day)
+        // Fetch all matches for that specific date
         if (nextMatchDate) {
             const date = new Date(nextMatchDate.date);
             const startOfDay = new Date(date.setHours(0, 0, 0, 0));
@@ -67,7 +66,6 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
                 date: { $gte: startOfDay, $lte: endOfDay }
             }).sort({ date: 1 }).lean();
 
-            // Add team names to matches
             nextMatches = rawNextMatches.map(match => ({
                 ...match,
                 team1Name: teamMap.get(match.team1Id) || `קבוצה ${match.team1Id}`,
@@ -82,9 +80,7 @@ export const getDashboard = async (req: Request, res: Response): Promise<void> =
         }));
 
         res.json({
-            standings: standings.slice(0, 5),
             topScorer: topScorers[0] || null,
-            latestNews,
             nextMatches,
             recentMatches: enrichedRecentMatches
         });

@@ -1,179 +1,207 @@
 # Ramadan Tournament 2026
 
-A GitHub Pages-hosted tournament management website with Python-powered statistics engine.
+A full-stack tournament management system with real-time statistics, news management, and community engagement features.
 
 ## Features
 
+### Core Functionality
 - **Live Tournament Tracking**: Real-time standings, top scorers, and match results
-- **Player Profiles**: 54 players across 5 teams with detailed stats
-- **Responsive Design**: Mobile-friendly interface with green/yellow color scheme
-- **Automated Stats**: Python engine calculates standings, goals, and brackets
-- **CSV Import**: Easy player data management via CSV file
+- **Player Profiles**: Comprehensive stats for all players across teams
+- **Responsive Design**: Mobile-friendly interface with green/yellow theme
+- **RTL Support**: Full Hebrew language support with proper RTL layout
 
-## Project Structure
+### User Features
+- **Dashboard**: Quick overview of tournament status and upcoming matches
+- **Team Pages**: Detailed team rosters and statistics
+- **Schedule**: Complete match schedule with live results
+- **Stats**: Player rankings, top scorers, and detailed statistics
+- **Anonymous Comments**: Engage with match discussions (with profanity filtering)
+
+### Admin Features
+- **Secure Authentication**: JWT-based admin login system
+- **CSV Player Import**: Bulk import players via CSV upload
+- **News Management**: Create, edit, and delete news announcements
+- **Match Management**: View and manage match data
+- **Banned Words Management**: Multi-language profanity filter control
+- **Comment Moderation**: Search and remove inappropriate comments
+
+## Architecture
+
+### Full Stack Application
+
+**Frontend:** React 18 + TypeScript + Vite  
+**Backend:** Node.js + Express + MongoDB  
+**Hosting:** Vercel (Frontend) + Render (Backend)
+
+### Project Structure
 
 ```
 ramadan-tournament/
-├── index.html                 # Main website
-├── assets/
-│   ├── css/style.css         # Custom styling
-│   ├── js/app.js            # Frontend logic
-│   └── images/              # Team logos and player photos
-├── data/
-│   ├── teams.json           # Team and player data
-│   ├── matches.json         # Match results
-│   ├── news.json            # Announcements
-│   ├── standings.json       # Generated standings
-│   ├── top_scorers.json     # Generated top scorers
-│   ├── player_stats.json    # Generated player stats
-│   └── bracket.json         # Knockout bracket
-├── players-data.csv         # Source player data
-├── import_players.py        # CSV import script
-├── update_stats.py          # Statistics engine
-└── deploy.bat              # Deployment automation
+├── client/                    # React frontend
+│   ├── src/
+│   │   ├── api/              # API client and endpoints
+│   │   ├── components/       # Reusable components
+│   │   ├── pages/            # Page components
+│   │   └── types/            # TypeScript interfaces
+│   └── public/               # Static assets
+├── server/                    # Node.js backend
+│   ├── src/
+│   │   ├── controllers/      # Business logic
+│   │   ├── models/           # Database schemas
+│   │   ├── routes/           # API routes
+│   │   ├── middleware/       # Auth & validation
+│   │   └── scripts/          # Utility scripts
+└── data/                      # Legacy data files
 ```
 
 ## Quick Start
 
-### 1. Update Match Results
+### Prerequisites
+- Node.js 18+
+- MongoDB Atlas account
+- Git
 
-Edit `data/matches.json` and add/update match information:
+### Development Setup
 
-```json
-{
-  "id": 7,
-  "date": "2026-03-22",
-  "location": "Main Stadium",
-  "phase": "group",
-  "team1_id": 1,
-  "team2_id": 2,
-  "score1": 2,
-  "score2": 1,
-  "goals": [
-    {"member_id": 101, "minute": 23},
-    {"member_id": 201, "minute": 56}
-  ]
-}
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Amirlabai/ramadan-tournament.git
+   cd ramadan-tournament
+   ```
 
-### 2. Update Statistics
+2. **Setup Backend**
+   ```bash
+   cd server
+   npm install
+   
+   # Create .env file with:
+   # MONGODB_URI=your_mongodb_connection_string
+   # JWT_SECRET=your_secret_key
+   # PORT=5000
+   
+   npm run dev
+   ```
 
-Run the Python script to recalculate standings:
+3. **Setup Frontend**
+   ```bash
+   cd client
+   npm install
+   
+   # Create .env file with:
+   # VITE_API_URL=http://localhost:5000
+   
+   npm run dev
+   ```
 
-```bash
-python update_stats.py
-```
+4. **Seed Initial Data** (Optional)
+   ```bash
+   cd server
+   npx tsx src/scripts/seedBannedWords.ts
+   ```
 
-This generates:
-- `data/standings.json` - Team standings
-- `data/top_scorers.json` - Top goal scorers
-- `data/player_stats.json` - Player statistics
-- `data/bracket.json` - Knockout bracket
+### Admin Access
 
-### 3. Deploy to GitHub Pages
+Default admin credentials can be set via environment variables or created through the registration endpoint (first user).
 
-#### Quick Deploy (Windows):
-```bash
-deploy.bat
-```
+## Data Management
 
-#### Manual Deploy:
-```bash
-git add .
-git commit -m "Update tournament stats"
-git push
-```
+### Importing Players
 
-GitHub Pages will automatically update within seconds!
-
-## Updating Players
-
-### From CSV File:
-
-1. Edit `players-data.csv`
-2. Run: `python import_players.py`
-3. This updates `data/teams.json`
-
-### CSV Format:
+Upload a CSV file through the admin panel with the following format:
 
 ```csv
-שם קבוצה,שם,משפחה,כינוי,מספר
-Team Name,First,Last,Nickname,10
+שם קבוצה,שם,משפחה,כינוי,מספר,קפטן
+Team Name,First,Last,Nickname,10,true
 ```
 
-## Tournament Phases
+### Managing Banned Words
 
-### Group Stage
-- Round-robin matches
-- 3 points for win, 1 for draw
-- Teams ranked by points, then goal difference
+Access the admin panel → Banned Words tab to:
+- Add new profanity filters (English/Hebrew/Other)
+- Remove existing banned words
+- View all filtered words with language tags
 
-### Knockout Stage
-- Top seeds vs bottom seeds (1v8, 2v7, 3v6, 4v5)
-- Winners bracket → Championship
-- Losers bracket → 5th-8th place
+### Comment Moderation
+
+Access the admin panel → Comment Management tab to:
+- View all user comments with match context
+- Search comments by content or author
+- Delete inappropriate comments
 
 ## Color Scheme
 
-- **Primary**: #2A6B11 (Dark Green)
-- **Secondary**: #FFFF00 (Bright Yellow)
+- **Primary Green**: #2A6B11
+- **Accent Yellow**: #FFFF00
+- Fully supports RTL layout for Hebrew content
 
-## GitHub Pages Setup
+## Security Features
 
-1. Go to repository Settings → Pages
-2. Source: Deploy from branch `main`
-3. Folder: `/ (root)`
-4. Save and wait for deployment
-5. Visit: `https://[username].github.io/ramadan-tournament`
-
-## Local Testing
-
-### Option 1: Direct File
-Simply open `index.html` in your browser
-
-### Option 2: Local Server
-```bash
-python -m http.server 8000
-```
-Then visit: `http://localhost:8000`
-
-## Add News Announcements
-
-Edit `data/news.json`:
-
-```json
-{
-  "id": 4,
-  "title": "Semifinals This Weekend!",
-  "message": "Don't miss the knockout stage matches",
-  "date": "2026-03-25",
-  "priority": "high"
-}
-```
-
-High priority news appears in the yellow banner.
+- JWT-based authentication
+- Password hashing with bcrypt
+- CORS protection
+- Rate limiting on auth endpoints
+- Input validation on all endpoints
+- Multi-language profanity filtering
 
 ## Technologies Used
 
-- **Frontend**: HTML5, Bootstrap 5, JavaScript
-- **Data Processing**: Python 3
-- **Data Tables**: DataTables.js
-- **Hosting**: GitHub Pages
-- **Fonts**: Google Fonts (Roboto)
+### Frontend
+- React 18
+- TypeScript
+- Vite
+- Bootstrap 5
+- Axios
+- React Router
 
-## Requirements
+### Backend
+- Node.js
+- Express
+- MongoDB with Mongoose
+- TypeScript
+- JWT for authentication
+- Multer for file uploads
+- CSV parsing
 
-- Python 3.7+ (for statistics engine)
-- Git (for deployment)
-- Modern web browser
+## Deployment
 
-## Support
+### Frontend (Vercel)
+```bash
+cd client
+vercel deploy --prod
+```
 
-For issues or questions, check the match data format in `data/matches.json` and ensure all team IDs match those in `data/teams.json`.
+### Backend (Render)
+Connected to GitHub for automatic deployments on push to main branch.
+
+## Live Links
+
+- **Frontend**: [https://ramadan-tournament-client.vercel.app](https://ramadan-tournament-client.vercel.app)
+- **Backend API**: [https://ramadan-tournament-api.onrender.com](https://ramadan-tournament-api.onrender.com)
+
+## API Documentation
+
+### Public Endpoints
+- `GET /api/teams` - Get all teams with players
+- `GET /api/matches` - Get all matches
+- `GET /api/news` - Get all news items
+- `GET /api/stats` - Get tournament statistics
+- `GET /api/comments/:matchId` - Get comments for a match
+- `POST /api/comments` - Create a comment (anonymous)
+
+### Admin Endpoints (Requires Authentication)
+- `POST /api/admin/import-players` - Import players from CSV
+- `GET /api/admin/banned-words` - Get banned words
+- `POST /api/admin/banned-words` - Add banned word
+- `DELETE /api/admin/banned-words/:id` - Remove banned word
+- `GET /api/admin/comments` - Get all comments
+- `DELETE /api/admin/comments/:id` - Delete comment
+
+## Contributing
+
+This is a tournament-specific project. For issues or suggestions, please contact the development team.
 
 ---
 
-**Tournament Status**: Group Stage  
-**Last Updated**: 2026-03-19  
-**Total Players**: 54  
-**Total Teams**: 5
+**Tournament Status**: Active  
+**Last Updated**: 2026-02-15  
+**Version**: 2.0.1

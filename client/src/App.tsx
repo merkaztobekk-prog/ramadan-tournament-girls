@@ -15,16 +15,22 @@ function App() {
   return (
     <Router>
       <div className="app" dir="rtl">
-        {/* Header */}
-        <div className="container-fluid p-0">
-          <header className="tournament-header text-center py-4">
-            <h1 className="display-4 fw-bold">טורניר נצ'מאז<br />1447/2026</h1>
-            <p className="lead" id="tournamentPhase">שלב הבתים</p>
-          </header>
-        </div>
+        {/* Header & News Banner Container */}
+        <div className="header-news-wrapper">
+          <div className="container-fluid p-0">
+            <header className="tournament-header text-center py-4">
+              <img src="/banner-foreground.svg" className="banner-foreground right" alt="" />
+              <img src="/banner-foreground.svg" className="banner-foreground left" alt="" />
+              <img src="/to-be-logo.svg" className="header-side-logo left" alt="" />
+              <img src="/Flag_of_Adygea.svg" className="header-side-logo right" alt="" />
+              <h1 className="display-4 fw-bold">טורניר נצ'מאז<br />1447/2026</h1>
+              <p className="lead" id="tournamentPhase">שלב הבתים</p>
+            </header>
+          </div>
 
-        {/* News Banner */}
-        <NewsBanner />
+          {/* News Banner */}
+          <NewsBanner />
+        </div>
 
         <div className="container-fluid">
           {/* Navigation Tabs */}

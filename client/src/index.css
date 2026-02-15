@@ -7,6 +7,19 @@
   --dark-gray: #333333;
   --white: #FFFFFF;
   --transition-speed: 0.3s;
+
+  /* Banner SVG Controls */
+  --banner-svg-height: 100%;
+  /* Height relative to header */
+  --banner-svg-scale: 1.0;
+  /* Additional scale factor */
+  --banner-svg-opacity: 0.8;
+
+  /* Header Side Logo Controls */
+  --header-logo-scale: 1.0;
+  --header-logo-opacity: 1;
+  --header-logo-inner-padding: 0%;
+  /* Play with this to "scale" the image inside the circle */
 }
 
 /* Global Styles */
@@ -25,53 +38,100 @@ body {
   overflow-x: hidden;
 }
 
+/* Header & News Wrapper */
+.header-news-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* Contains the SVG corners */
+  width: 100%;
+}
+
+.banner-foreground {
+  position: absolute;
+  top: 0;
+  height: var(--banner-svg-height);
+  width: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--banner-svg-opacity);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.banner-foreground.left {
+  left: 0;
+  transform: scale(var(--banner-svg-scale));
+  transform-origin: top left;
+}
+
+.banner-foreground.right {
+  right: 0;
+  /* Flip inwards by using center origin or left origin */
+  transform: scaleX(-1) scale(var(--banner-svg-scale));
+  transform-origin: center;
+}
+
 /* Header */
 .tournament-header {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(135deg, var(--primary-green) 0%, #1a4d0a 100%);
   color: var(--white);
   margin-bottom: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.tournament-header h1 {
+.tournament-header h1,
+.tournament-header p {
+  position: relative;
+  z-index: 2;
+  /* Text over SVGs */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* News Banner */
-.news-banner {
-  background: linear-gradient(90deg, var(--secondary-yellow) 0%, #ffed4e 100%);
-  border: 3px solid var(--primary-green);
-  padding: 15px 30px;
-  margin: 20px auto;
-  max-width: 1200px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  animation: slideIn 0.5s ease-out;
+.header-side-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(var(--header-logo-scale));
+  height: 80%;
+  /* Base height */
+  width: auto;
+  aspect-ratio: 1/1;
+  /* Force square for perfect rounding */
+  object-fit: contain;
+  /* Combined with padding for inner scaling */
+  padding: var(--header-logo-inner-padding);
+  border-radius: 50%;
+  /* Rounded off */
+  opacity: var(--header-logo-opacity);
+  pointer-events: none;
+  z-index: 0;
+  border: none;
+  /* Removed border */
+  transition: all 0.3s ease;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
+.header-side-logo.left {
+  left: 22%;
+  transform-origin: center left;
+}
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.header-side-logo.right {
+  right: 22%;
+  transform-origin: center right;
 }
 
 /* News Banner - Vibrant Green/Yellow (Project Theme) */
 .news-banner {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(90deg, var(--secondary-yellow) 0%, #ffed4e 100%);
   border: none;
-  /* No border */
   padding: 1.5rem 1rem;
   margin: 0 0 2rem 0;
   width: 100%;
   max-width: 100%;
   border-radius: 0;
-  /* No rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideIn 0.5s ease-out;
   display: flex;
@@ -425,6 +485,43 @@ body {
 
   .match-score {
     padding: 10px 0;
+  }
+
+  /* Phone compatibility for banner SVGs */
+  .banner-foreground.right {
+    right: -30%;
+    /* Push further right */
+  }
+
+  .banner-foreground.left {
+    left: -30%;
+    /* Push further left */
+  }
+
+  .banner-foreground {
+    opacity: 0.5;
+    /* More subtle on mobile */
+  }
+
+  /* Phone compatibility for side logos */
+  .header-side-logo {
+    top: auto;
+    bottom: 5px;
+    /* Shove into bottom corners */
+    transform: scale(0.3);
+    opacity: 0.9;
+    z-index: 5;
+    /* Ensure they stay visible but out of the way */
+  }
+
+  .header-side-logo.left {
+    left: 5%;
+    transform-origin: bottom left;
+  }
+
+  .header-side-logo.right {
+    right: 5%;
+    transform-origin: bottom right;
   }
 }
 

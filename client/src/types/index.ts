@@ -73,7 +73,6 @@ export interface DashboardData {
     nextMatches: Match[];
     recentMatches: Match[];
     topScorer: TopScorer | null;
-    latestNews: News | null;
 }
 
 export interface User {
