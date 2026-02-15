@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { matchesAPI, teamsAPI } from '../api/client';
 import type { Match, Team } from '../types';
+import CommentSection from '../components/CommentSection';
 import './Schedule.css';
 
 const Schedule = () => {
@@ -8,6 +9,7 @@ const Schedule = () => {
     const [teams, setTeams] = useState<Team[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [expandedMatchId, setExpandedMatchId] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -129,6 +131,19 @@ const Schedule = () => {
                                         ))}
                                     </div>
                                 </div>
+                            )}
+
+                            <div className="match-actions">
+                                <button
+                                    className="btn-comments"
+                                    onClick={() => setExpandedMatchId(expandedMatchId === match._id ? null : match._id)}
+                                >
+                                    {expandedMatchId === match._id ? '🔼 הסתר תגובות' : '💬 תגובות'}
+                                </button>
+                            </div>
+
+                            {expandedMatchId === match._id && (
+                                <CommentSection matchId={match.id} />
                             )}
                         </div>
                     );

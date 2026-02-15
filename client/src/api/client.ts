@@ -50,6 +50,16 @@ export const authAPI = {
 
 export const adminAPI = {
     uploadPlayers: (formData: FormData) => api.post('/admin/import-players', formData),
+    getBannedWords: () => api.get('/admin/banned-words'),
+    addBannedWord: (data: { word: string; language?: string }) => api.post('/admin/banned-words', data),
+    removeBannedWord: (id: string) => api.delete(`/admin/banned-words/${id}`),
+    getComments: () => api.get('/admin/comments'),
+    deleteComment: (id: string) => api.delete(`/admin/comments/${id}`),
+};
+
+export const commentsAPI = {
+    getByMatchId: (matchId: number) => api.get(`/comments/${matchId}`),
+    create: (data: { matchId: number; author?: string; content: string }) => api.post('/comments', data),
 };
 
 export default api;

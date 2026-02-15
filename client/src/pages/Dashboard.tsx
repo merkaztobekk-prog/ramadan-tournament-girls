@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { statsAPI } from '../api/client';
 import type { DashboardData } from '../types';
+import CommentSection from '../components/CommentSection';
 import './Dashboard.css';
 
 const Dashboard = () => {
     const [data, setData] = useState<DashboardData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [expandedMatchId, setExpandedMatchId] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchDashboard = async () => {
@@ -54,6 +56,17 @@ const Dashboard = () => {
                                             <div className="match-date">{formatDate(match.date)}</div>
                                             <div className="match-location">מיקום: {match.location}</div>
                                         </div>
+                                        <div className="match-actions">
+                                            <button
+                                                className="btn-comments"
+                                                onClick={() => setExpandedMatchId(expandedMatchId === match._id ? null : match._id)}
+                                            >
+                                                {expandedMatchId === match._id ? '🔼 הסתר תגובות' : '💬 תגובות'}
+                                            </button>
+                                        </div>
+                                        {expandedMatchId === match._id && (
+                                            <CommentSection matchId={match.id} />
+                                        )}
                                     </div>
                                 ))}
                             </div>

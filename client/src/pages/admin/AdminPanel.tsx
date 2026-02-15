@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { matchesAPI, newsAPI, authAPI, teamsAPI } from '../../api/client';
+import { matchesAPI, newsAPI, authAPI, teamsAPI, adminAPI } from '../../api/client';
 import type { Match, News, Team } from '../../types';
 import MatchForm from '../../components/admin/MatchForm';
 import NewsForm from '../../components/admin/NewsForm';
@@ -11,9 +11,14 @@ const AdminPanel = () => {
     const [news, setNews] = useState<News[]>([]);
     const [teams, setTeams] = useState<Team[]>([]);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<'matches' | 'news' | 'import'>('matches');
+    const [activeTab, setActiveTab] = useState<'matches' | 'news' | 'import' | 'banned-words' | 'comments'>('matches');
     const [file, setFile] = useState<File | null>(null);
     const [uploading, setUploading] = useState(false);
+    const [bannedWords, setBannedWords] = useState<any[]>([]);
+    const [newWord, setNewWord] = useState('');
+    const [newWordLanguage, setNewWordLanguage] = useState('other');
+    const [comments, setComments] = useState<any[]>([]);
+    const [searchFilter, setSearchFilter] = useState('');
     const navigate = useNavigate();
 
     const handleFileUpload = async () => {
@@ -67,6 +72,14 @@ const AdminPanel = () => {
         };
         fetchData();
     }, [navigate]);
+
+    useEffect(() => {
+        if (activeTab === 'banned-words') {
+            fetchBannedWords();
+        } else if (activeTab === 'comments') {
+            fetchComments();
+        }
+    }, [activeTab]);
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -148,6 +161,69 @@ const AdminPanel = () => {
         return team ? team.name : `קבוצה ${teamId}`;
     };
 
+    const fetchBannedWords = async () => {
+        try {
+            const response = await adminAPI.getBannedWords();
+            setBannedWords(response.data);
+        } catch (err) {
+            console.error('Error fetching banned words:', err);
+        }
+    };
+
+    const handleAddBannedWord = async () => {
+        if (!newWord.trim()) return;
+
+        // Check for duplicates on client side
+        const wordLower = newWord.trim().toLowerCase();
+        if (bannedWords.some(w => w.word.toLowerCase() === wordLower)) {
+            alert('המילה כבר קיימת ברשימה');
+            return;
+        }
+
+        try {
+            const response = await adminAPI.addBannedWord({
+                word: newWord.trim(),
+                language: newWordLanguage,
+            });
+            setBannedWords([...bannedWords, response.data]);
+            setNewWord('');
+            setNewWordLanguage('other');
+        } catch (err: any) {
+            alert(err.response?.data?.error || 'שגיאה בהוספת מילה');
+        }
+    };
+
+    const handleRemoveBannedWord = async (id: string) => {
+        if (!confirm('האם אתה בטוח שברצונך למחוק מילה זו?')) return;
+
+        try {
+            await adminAPI.removeBannedWord(id);
+            setBannedWords(bannedWords.filter(w => w._id !== id));
+        } catch (err) {
+            alert('שגיאה במחיקת מילה');
+        }
+    };
+
+    const fetchComments = async () => {
+        try {
+            const response = await adminAPI.getComments();
+            setComments(response.data);
+        } catch (err) {
+            console.error('Error fetching comments:', err);
+        }
+    };
+
+    const handleDeleteComment = async (id: string) => {
+        if (!confirm('האם אתה בטוח שברצונך למחוק תגובה זו?')) return;
+
+        try {
+            await adminAPI.deleteComment(id);
+            setComments(comments.filter(c => c._id !== id));
+        } catch (err) {
+            alert('שגיאה במחיקת תגובה');
+        }
+    };
+
     if (loading) return <div className="loading">טוען...</div>;
 
     return (
@@ -177,6 +253,18 @@ const AdminPanel = () => {
                     onClick={() => setActiveTab('import')}
                 >
                     ייבוא שחקנים
+                </button>
+                <button
+                    className={`tab ${activeTab === 'banned-words' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('banned-words')}
+                >
+                    מילים חסומות ({bannedWords.length})
+                </button>
+                <button
+                    className={`tab ${activeTab === 'comments' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('comments')}
+                >
+                    ניהול תגובות ({comments.length})
                 </button>
             </div>
 
@@ -284,6 +372,142 @@ const AdminPanel = () => {
                             >
                                 {uploading ? 'מעלה...' : 'ייבא שחקנים'}
                             </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {activeTab === 'banned-words' && (
+                <div className="tab-content">
+                    <div className="card">
+                        <h2>ניהול מילים חסומות</h2>
+
+                        <div className="p-4">
+                            <div className="mb-4">
+                                <h3>הוסף מילה חדשה</h3>
+                                <div className="d-flex gap-2">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="מילה חדשה"
+                                        value={newWord}
+                                        onChange={(e) => setNewWord(e.target.value)}
+                                        onKeyPress={(e) => e.key === 'Enter' && handleAddBannedWord()}
+                                    />
+                                    <select
+                                        className="form-control"
+                                        value={newWordLanguage}
+                                        onChange={(e) => setNewWordLanguage(e.target.value)}
+                                        style={{ maxWidth: '150px' }}
+                                    >
+                                        <option value="en">English</option>
+                                        <option value="he">עברית</option>
+                                        <option value="other">אחר</option>
+                                    </select>
+                                    <button
+                                        onClick={handleAddBannedWord}
+                                        className="btn btn-primary"
+                                        disabled={!newWord.trim()}
+                                    >
+                                        הוסף
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="items-list">
+                                {bannedWords.length === 0 ? (
+                                    <div className="text-center text-muted p-4">אין מילים חסומות</div>
+                                ) : (
+                                    bannedWords.map((word) => (
+                                        <div key={word._id} className="item">
+                                            <div className="item-info">
+                                                <strong>{word.word}</strong>
+                                                <span className="badge" style={{
+                                                    background: word.language === 'en' ? '#3b82f6' :
+                                                        word.language === 'he' ? '#10b981' : '#6b7280',
+                                                    color: 'white',
+                                                    padding: '0.25rem 0.75rem',
+                                                    borderRadius: '12px',
+                                                    fontSize: '0.75rem'
+                                                }}>
+                                                    {word.language === 'en' ? 'English' :
+                                                        word.language === 'he' ? 'עברית' : 'אחר'}
+                                                </span>
+                                            </div>
+                                            <div className="item-actions">
+                                                <button
+                                                    onClick={() => handleRemoveBannedWord(word._id)}
+                                                    className="btn btn-danger"
+                                                >
+                                                    מחק
+                                                </button>
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {activeTab === 'comments' && (
+                <div className="tab-content">
+                    <div className="card">
+                        <h2>ניהול תגובות</h2>
+
+                        <div className="p-4">
+                            <div className="mb-4">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="חפש תגובות..."
+                                    value={searchFilter}
+                                    onChange={(e) => setSearchFilter(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="items-list">
+                                {comments.length === 0 ? (
+                                    <div className="text-center text-muted p-4">אין תגובות</div>
+                                ) : (
+                                    comments
+                                        .filter(comment =>
+                                            !searchFilter ||
+                                            comment.content.toLowerCase().includes(searchFilter.toLowerCase()) ||
+                                            comment.author.toLowerCase().includes(searchFilter.toLowerCase())
+                                        )
+                                        .map((comment) => {
+                                            const match = matches.find(m => m.id === comment.matchId);
+                                            return (
+                                                <div key={comment._id} className="item">
+                                                    <div className="item-info" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+                                                        <div style={{ display: 'flex', gap: '1rem', marginBottom: '0.5rem', width: '100%' }}>
+                                                            <strong>{comment.author}</strong>
+                                                            <span style={{ color: '#666', fontSize: '0.85rem' }}>
+                                                                {new Date(comment.createdAt).toLocaleString('he-IL')}
+                                                            </span>
+                                                        </div>
+                                                        {match && (
+                                                            <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.5rem' }}>
+                                                                משחק: {getTeamName(match.team1Id)} vs {getTeamName(match.team2Id)}
+                                                            </div>
+                                                        )}
+                                                        <div style={{ marginTop: '0.5rem' }}>{comment.content}</div>
+                                                    </div>
+                                                    <div className="item-actions">
+                                                        <button
+                                                            onClick={() => handleDeleteComment(comment._id)}
+                                                            className="btn btn-danger"
+                                                        >
+                                                            מחק
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            );
+                                        })
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
