@@ -121,6 +121,56 @@ body {
   transform-origin: center right;
 }
 
+/* Footer */
+.tournament-footer {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #1a4d0a 100%);
+  color: var(--white);
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+}
+
+.footer-heading {
+  color: var(--secondary-yellow);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer-link:hover {
+  color: var(--secondary-yellow);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
 /* News Banner - Vibrant Green/Yellow (Project Theme) */
 .news-banner {
   position: relative;

@@ -63,10 +63,10 @@
 .recent-matches h2 {
     background-color: #2e7d32;
     /* Green header */
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 0;
     padding: 1rem;
-    text-align: right;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
 }

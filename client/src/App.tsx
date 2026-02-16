@@ -7,6 +7,7 @@ import Login from './pages/admin/Login';
 import AdminPanel from './pages/admin/AdminPanel';
 import Navbar from './components/Navbar';
 import NewsBanner from './components/NewsBanner';
+import Footer from './components/Footer';
 import './App.css';
 
 import { Analytics } from '@vercel/analytics/react';
@@ -50,6 +51,10 @@ function App() {
             </main>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
+
         <Analytics />
       </div>
     </Router>
