@@ -49,11 +49,15 @@ const Schedule = () => {
     };
 
     const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString('he-IL', {
+        const date = new Date(dateString);
+        return new Intl.DateTimeFormat('he-IL', {
             year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+            month: 'numeric',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Jerusalem'
+        }).format(date);
     };
 
     const getMatchStatus = (match: Match) => {
@@ -94,13 +98,9 @@ const Schedule = () => {
                     const status = getMatchStatus(match);
                     return (
                         <div key={match._id} className={`match-card card ${status}`}>
-                            <div className="match-meta">
-                                <span className="match-date">{formatDate(match.date)}</span>
-                                <span className="match-location">{match.location}</span>
-                                <span className={`match-status ${status}`}>
-                                    {status === 'upcoming' ? 'עתיד' : status === 'live' ? 'בהתקדמות' : 'הסתיים'}
-                                </span>
-                            </div>
+                            <span className={`match-status ${status}`}>
+                                {status === 'upcoming' ? 'עתיד' : status === 'live' ? 'Live' : 'הסתיים'}
+                            </span>
 
                             <div className="match-teams-score">
                                 <div className="team-side">
@@ -118,6 +118,11 @@ const Schedule = () => {
                                         <span className="team-score">{match.score2}</span>
                                     )}
                                 </div>
+                            </div>
+
+                            <div className="match-meta">
+                                <span className="match-date">{formatDate(match.date)}</span>
+                                <span className="match-location">{match.location}</span>
                             </div>
 
                             {match.goals && match.goals.length > 0 && (

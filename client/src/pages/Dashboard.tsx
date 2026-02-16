@@ -30,7 +30,22 @@ const Dashboard = () => {
     if (!data) return <div className="error">אין נתונים</div>;
 
     const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString('he-IL');
+        const date = new Date(dateString);
+        return new Intl.DateTimeFormat('he-IL', {
+            day: 'numeric',
+            month: 'numeric',
+            year: 'numeric',
+            timeZone: 'Asia/Jerusalem'
+        }).format(date);
+    };
+
+    const formatTime = (dateString: string) => {
+        const date = new Date(dateString);
+        return new Intl.DateTimeFormat('he-IL', {
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Jerusalem'
+        }).format(date);
     };
 
     return (
@@ -52,9 +67,10 @@ const Dashboard = () => {
                                         <div className="team-left">
                                             <span className="team-name">{match.team2Name || `קבוצה ${match.team2Id}`}</span>
                                         </div>
-                                        <div className="match-meta">
-                                            <div className="match-date">{formatDate(match.date)}</div>
-                                            <div className="match-location">מיקום: {match.location}</div>
+                                        <div className="match-meta" style={{ textAlign: 'right', direction: 'rtl' }}>
+                                            <div><strong>תאריך:</strong> {formatDate(match.date)}</div>
+                                            <div><strong>שעה:</strong> {formatTime(match.date)}</div>
+                                            <div><strong>מיקום:</strong> {match.location}</div>
                                         </div>
                                         <div className="match-actions">
                                             <button

@@ -35,12 +35,18 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
 
     useEffect(() => {
         if (initialData) {
+            // Format for datetime-local: YYYY-MM-DDTHH:mm
+            const dateObj = new Date(initialData.date);
+            // Adjust to Jerusalem time for editing
+            const offset = dateObj.getTimezoneOffset() * 60000; // Offset in milliseconds
+            const localISOTime = new Date(dateObj.getTime() - offset).toISOString().slice(0, 16);
+
             setFormData({
                 team1Id: initialData.team1Id.toString(),
                 team2Id: initialData.team2Id.toString(),
                 score1: initialData.score1?.toString() ?? '',
                 score2: initialData.score2?.toString() ?? '',
-                date: new Date(initialData.date).toISOString().split('T')[0],
+                date: localISOTime,
                 location: initialData.location,
                 phase: initialData.phase,
                 goals: initialData.goals || []
@@ -94,8 +100,15 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                 </div>
 
                 <div className="col-12">
-                    <label htmlFor="date" className="form-label">תאריך</label>
-                    <input type="date" className="form-control" id="date" value={formData.date} onChange={handleChange} required />
+                    <label htmlFor="date" className="form-label">תאריך ושעה (זמן ירושלים)</label>
+                    <input
+                        type="datetime-local"
+                        className="form-control"
+                        id="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
 
                 <div className="col-12">

@@ -285,7 +285,16 @@ const AdminPanel = () => {
                                             <strong>
                                                 {getTeamName(match.team1Id)} vs {getTeamName(match.team2Id)}
                                             </strong>
-                                            <span>{new Date(match.date).toLocaleDateString('he-IL')}</span>
+                                            <span>
+                                                {new Intl.DateTimeFormat('he-IL', {
+                                                    year: 'numeric',
+                                                    month: 'numeric',
+                                                    day: 'numeric',
+                                                    hour: '2-digit',
+                                                    minute: '2-digit',
+                                                    timeZone: 'Asia/Jerusalem'
+                                                }).format(new Date(match.date))}
+                                            </span>
                                             <span>תוצאה: {match.score1 ?? '-'} : {match.score2 ?? '-'}</span>
                                         </div>
                                         <div className="item-actions">

@@ -136,16 +136,13 @@
 }
 
 .match-actions {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .btn-comments {
-    background: rgba(255, 215, 0, 0.1);
-    color: var(--primary-color, #ffd700);
+    background: hsl(51, 100%, 50%, 0.4);
+    color: var(--primary-color);
     border: 1px solid rgba(255, 215, 0, 0.3);
     padding: 0.5rem 1.5rem;
     border-radius: 20px;

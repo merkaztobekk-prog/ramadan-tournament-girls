@@ -245,14 +245,6 @@
     }
 }
 
-.match-actions {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-    display: flex;
-    justify-content: center;
-}
-
 .btn-comments {
     background: rgba(46, 125, 50, 0.1);
     color: #2e7d32;
