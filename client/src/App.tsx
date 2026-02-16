@@ -8,6 +8,7 @@ import AdminPanel from './pages/admin/AdminPanel';
 import Navbar from './components/Navbar';
 import NewsBanner from './components/NewsBanner';
 import Footer from './components/Footer';
+import IftarTimer from './components/IftarTimer';
 import './App.css';
 
 import { Analytics } from '@vercel/analytics/react';
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <div className="app" dir="rtl">
+        <IftarTimer />
         {/* Header & News Banner Container */}
         <div className="header-news-wrapper">
           <div className="container-fluid p-0">

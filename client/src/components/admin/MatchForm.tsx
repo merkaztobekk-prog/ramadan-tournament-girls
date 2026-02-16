@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { teamsAPI } from '../../api/client';
 import type { Match, Team, Goal } from '../../types';
+import './MatchForm.css';
 
 interface MatchFormProps {
     initialData?: Match | null;
@@ -20,6 +21,9 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
         phase: 'group',
         goals: [] as Goal[]
     });
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [errors, setErrors] = useState<Record<string, string>>({});
 
     useEffect(() => {
         const fetchTeams = async () => {
@@ -60,19 +64,79 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const payload = {
-            ...formData,
-            team1Id: parseInt(formData.team1Id),
-            team2Id: parseInt(formData.team2Id),
-            score1: formData.score1 === '' ? undefined : parseInt(formData.score1),
-            score2: formData.score2 === '' ? undefined : parseInt(formData.score2),
-        };
-        await onSubmit(payload);
+
+        // Reset states
+        setErrors({});
+        setSuccess(false);
+
+        // Validation
+        const newErrors: Record<string, string> = {};
+        if (formData.team1Id === formData.team2Id && formData.team1Id !== '') {
+            newErrors.teams = 'לא ניתן לבחור את אותה קבוצה פעמיים';
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const payload = {
+                ...formData,
+                team1Id: parseInt(formData.team1Id),
+                team2Id: parseInt(formData.team2Id),
+                score1: formData.score1 === '' ? undefined : parseInt(formData.score1),
+                score2: formData.score2 === '' ? undefined : parseInt(formData.score2),
+            };
+            await onSubmit(payload);
+            setSuccess(true);
+            setTimeout(() => setSuccess(false), 3000);
+        } catch (err: any) {
+            setErrors({ submit: err.response?.data?.error || 'שגיאה בשמירת המשחק' });
+        } finally {
+            setLoading(false);
+        }
     };
 
+    // Keyboard shortcuts
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                const form = document.querySelector<HTMLFormElement>('form');
+                form?.requestSubmit();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                onCancel();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onCancel]);
+
     return (
-        <form onSubmit={handleSubmit} className="card p-4 shadow-sm">
+        <form onSubmit={handleSubmit} className="match-form card p-4 shadow-sm">
             <h4 className="mb-3">{initialData ? 'עריכת משחק' : 'הוספת משחק חדש'}</h4>
+
+            {success && (
+                <div className="alert alert-success" role="alert">
+                    ✓ המשחק נשמר בהצלחה!
+                </div>
+            )}
+
+            {errors.submit && (
+                <div className="alert alert-danger" role="alert">
+                    {errors.submit}
+                </div>
+            )}
+
+            {errors.teams && (
+                <div className="alert alert-warning" role="alert">
+                    {errors.teams}
+                </div>
+            )}
 
             <div className="row g-3">
                 <div className="col-md-6">
@@ -109,6 +173,9 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                         onChange={handleChange}
                         required
                     />
+                    <small className="form-text text-muted">
+                        כל התאריכים והשעות מוצגים באופן אוטומטי בזמן ירושלים
+                    </small>
                 </div>
 
                 <div className="col-12">
@@ -199,8 +266,21 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
             </div>
 
             <div className="d-flex gap-2 mt-4">
-                <button type="submit" className="btn btn-success flex-grow-1">שמור</button>
-                <button type="button" className="btn btn-secondary" onClick={onCancel}>ביטול</button>
+                <button type="submit" className="btn btn-success flex-grow-1" disabled={loading}>
+                    {loading ? (
+                        <>
+                            <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                            שומר...
+                        </>
+                    ) : 'שמור (Ctrl+S)'}
+                </button>
+                <button type="button" className="btn btn-secondary" onClick={onCancel} disabled={loading}>
+                    ביטול (Esc)
+                </button>
+            </div>
+
+            <div className="keyboard-shortcuts-hint mt-2">
+                <small className="text-muted">קיצורי מקלדת: Ctrl+S לשמירה | Esc לביטול</small>
             </div>
         </form>
     );

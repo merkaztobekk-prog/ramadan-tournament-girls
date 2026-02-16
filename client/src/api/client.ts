@@ -62,4 +62,8 @@ export const commentsAPI = {
     create: (data: { matchId: number; author?: string; content: string }) => api.post('/comments', data),
 };
 
+export const iftarAPI = {
+    getNext: () => api.get('/iftar/next'),
+};
+
 export default api;

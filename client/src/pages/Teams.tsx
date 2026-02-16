@@ -64,7 +64,7 @@ const Teams = () => {
                                         <td>{captain ? `${captain.firstName} ${captain.lastName}` : 'אין'}</td>
                                         <td>
                                             <span className="expand-icon">
-                                                {isExpanded ? '▼' : '◄'}
+                                                {isExpanded ? '▼' : '►'}
                                             </span>
                                         </td>
                                     </tr>

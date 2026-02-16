@@ -13,6 +13,7 @@ import newsRoutes from './routes/news';
 import statsRoutes from './routes/stats';
 import adminRoutes from './routes/admin';
 import commentRoutes from './routes/comments';
+import iftarRoutes from './routes/iftarRoutes';
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use('/api/news', newsRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/comments', commentRoutes);
+app.use('/api/iftar', iftarRoutes);
 
 // Error handler
 app.use(errorHandler);
