@@ -103,7 +103,7 @@ const IftarTimer = () => {
                         <div className="iftar-icon">🌙</div>
                         <div className="iftar-info">
                             <div className="iftar-label">
-                                {nextIftar.date === "2026-02-18" || new Date() < new Date("2026-02-18") ? "" : "איפטר הבא"}
+                                {nextIftar.date === "2026-02-18" || new Date() < new Date("2026-02-18") ? "✨" : "איפטר הבא"}
                             </div>
                             <div className="iftar-countdown">{timeLeft}</div>
                             <div className="iftar-details-hover">
