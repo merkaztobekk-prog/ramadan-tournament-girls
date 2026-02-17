@@ -50,7 +50,8 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-page">
-            <div className="container">
+            <div className="container py-4">
+                <h2 className="mb-4 fw-bold text-success border-bottom pb-2">דף הבית</h2>
                 <div className="dashboard-grid">
                     {data.nextMatches && data.nextMatches.length > 0 && (
                         <div className="dashboard-card next-matches-card">

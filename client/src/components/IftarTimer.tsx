@@ -14,6 +14,18 @@ const IftarTimer = () => {
     const [minimized, setMinimized] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
 
+    const getMoonEmoji = (islamData: string): string => {
+        // Extract day number from islam_data (format: "X رمضان 1447")
+        const dayMatch = islamData.match(/^(\d+)/);
+        if (!dayMatch) return '🌙';
+
+        const day = parseInt(dayMatch[1], 10);
+
+        if (day <= 10) return '🌙'; // First 10 days: crescent moon
+        if (day <= 20) return '🌕'; // Second 10 days: full moon
+        return '🌘'; // Last 10 days: waning crescent (mirror crescent)
+    };
+
     const calculateTimeLeft = useCallback(() => {
         if (!nextIftar) return '';
 
@@ -88,7 +100,7 @@ const IftarTimer = () => {
                     onClick={() => setMinimized(false)}
                     title="הצג ספירה לאחור"
                 >
-                    🌙
+                    {getMoonEmoji(nextIftar.islam_data)}
                 </button>
             ) : (
                 <div className="iftar-bubble">
@@ -100,7 +112,7 @@ const IftarTimer = () => {
                         ×
                     </button>
                     <div className="iftar-content">
-                        <div className="iftar-icon">🌙</div>
+                        <div className="iftar-icon">{getMoonEmoji(nextIftar.islam_data)}</div>
                         <div className="iftar-info">
                             <div className="iftar-label">
                                 {nextIftar.date === "2026-02-18" || new Date() < new Date("2026-02-18") ? "✨" : "איפטר הבא"}
