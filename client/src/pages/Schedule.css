@@ -53,7 +53,7 @@
 
 .match-status.live {
     background: #d1fae5;
-    color: #065f46;
+    color: var(--primary);
     animation: pulse 2s infinite;
 }
 

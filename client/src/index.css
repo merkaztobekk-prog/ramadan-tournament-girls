@@ -1,7 +1,7 @@
 /* Root Variables - Color Scheme */
 :root {
-  --primary-green: #2A6B11;
-  --secondary-yellow: #ffae00;
+  --primary-green: #ff436c71;
+  --secondary-yellow: #ff00c8b9;
   --light-gray: #F5F5F5;
   --medium-gray: #E0E0E0;
   --dark-gray: #333333;
@@ -74,7 +74,7 @@ body {
 .tournament-header {
   position: relative;
   z-index: 1;
-  background: linear-gradient(135deg, var(--primary-green) 0%, #1a4d0a 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-yellow) 100%);
   color: var(--white);
   margin-bottom: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -123,7 +123,7 @@ body {
 
 /* Footer */
 .tournament-footer {
-  background: linear-gradient(135deg, var(--primary-green) 0%, #1a4d0a 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-yellow) 100%);
   color: var(--white);
   margin-top: 3rem;
   padding-top: 0.5rem;
@@ -175,7 +175,7 @@ body {
 .news-banner {
   position: relative;
   z-index: 1;
-  background: linear-gradient(90deg, var(--secondary-yellow) 0%, #ffed4e 100%);
+  background: linear-gradient(90deg, var(--secondary-yellow) 0%, var(--secondary-yellow) 100%);
   border: none;
   padding: 1.5rem 1rem;
   margin: 0 0 2rem 0;
@@ -229,12 +229,12 @@ body {
 
 .tournament-tabs .nav-link:hover {
   color: var(--primary-green);
-  background-color: rgba(42, 107, 17, 0.05);
+  background-color: rgba(255, 84, 121, 0.05);
 }
 
 .tournament-tabs .nav-link.active {
   color: var(--primary-green);
-  background-color: rgba(42, 107, 17, 0.1);
+  background-color: rgba(255, 84, 121, 0.1);
   border-bottom: 3px solid var(--primary-green);
   font-weight: 700;
 }
@@ -271,11 +271,11 @@ body {
 
 .team-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(42, 107, 17, 0.3);
+  box-shadow: 0 8px 16px rgba(255, 84, 121, 0.3);
 }
 
 .team-card .card-header {
-  background: linear-gradient(135deg, var(--primary-green) 0%, #1a4d0a 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-yellow) 100%);
   color: var(--white);
   font-weight: 700;
   text-align: center;
@@ -297,7 +297,7 @@ body {
 }
 
 .team-member:hover {
-  background-color: rgba(42, 107, 17, 0.05);
+  background-color: rgba(255, 84, 121, 0.05);
 }
 
 /* Player Cards */
@@ -315,7 +315,7 @@ body {
 
 .player-card:hover {
   border-color: var(--primary-green);
-  box-shadow: 0 8px 16px rgba(42, 107, 17, 0.2);
+  box-shadow: 0 8px 16px rgba(255, 84, 121, 0.2);
   transform: scale(1.05);
 }
 
@@ -428,16 +428,16 @@ body {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(42, 107, 17, 0.05);
+  background-color: rgba(255, 84, 121, 0.05);
 }
 
 .table tbody tr:hover {
-  background-color: rgba(42, 107, 17, 0.1);
+  background-color: rgba(255, 84, 121, 0.1);
 }
 
 /* Player Table Rows */
 .player-row:hover {
-  background-color: rgba(42, 107, 17, 0.1) !important;
+  background-color: rgba(255, 84, 121, 0.1) !important;
 }
 
 .player-row {
@@ -457,7 +457,7 @@ body {
 
 /* Team Table Rows */
 .team-row:hover {
-  background-color: rgba(42, 107, 17, 0.1) !important;
+  background-color: rgba(255, 84, 121, 0.1) !important;
 }
 
 .team-row {
@@ -479,7 +479,7 @@ body {
 
 .roster-player-card:hover {
   border-color: var(--primary-green);
-  box-shadow: 0 4px 8px rgba(42, 107, 17, 0.2);
+  box-shadow: 0 4px 8px rgba(255, 84, 121, 0.2);
   transform: translateY(-2px);
 }
 

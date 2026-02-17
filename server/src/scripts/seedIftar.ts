@@ -11,7 +11,7 @@ dotenv.config({ path: envPath });
 const seedIftar = async () => {
     try {
         // Connect to MongoDB
-        const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ramadan-tournament';
+        const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ramadan-tournament-girls';
         await mongoose.connect(mongoURI);
         console.log('Connected to MongoDB');
 

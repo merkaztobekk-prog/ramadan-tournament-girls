@@ -22,7 +22,7 @@ app.use(cors({
     origin: [
         'http://localhost:5173',
         'http://localhost:3000',
-        'https://ramadan-tournament-client.vercel.app'
+        'https://ramadan-tournament-girls.vercel.app'
     ],
     credentials: true
 }));

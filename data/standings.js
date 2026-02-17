@@ -2,7 +2,7 @@
 window.STANDINGS_DATA = [
   {
     "team_id": 1,
-    "team_name": "ניגריה",
+    "team_name": "קבוצה 1",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -14,7 +14,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 2,
-    "team_name": "kazan",
+    "team_name": "קבוצה 2",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -26,7 +26,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 3,
-    "team_name": "Kazan",
+    "team_name": "קבוצה 3",
     "played": 0,
     "won": 0,
     "drawn": 0,
@@ -38,79 +38,7 @@ window.STANDINGS_DATA = [
   },
   {
     "team_id": 4,
-    "team_name": "Dar al fajir Fc",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 5,
-    "team_name": "המוסד לביטוח לאומי",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 6,
-    "team_name": "ביתר רוסייפה",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 7,
-    "team_name": "שישי בקטנה",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 8,
-    "team_name": "ספטרק נאלציק",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 9,
-    "team_name": "Fc ילדים",
-    "played": 0,
-    "won": 0,
-    "drawn": 0,
-    "lost": 0,
-    "goals_for": 0,
-    "goals_against": 0,
-    "goal_diff": 0,
-    "points": 0
-  },
-  {
-    "team_id": 10,
-    "team_name": "הפטישים",
+    "team_name": "קבוצה 4",
     "played": 0,
     "won": 0,
     "drawn": 0,
