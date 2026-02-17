@@ -33,7 +33,7 @@ const Stats = () => {
 
     return (
         <div className="stats-page container py-4">
-            <h2 className="mb-4 fw-bold text-success border-bottom pb-2">סטטיסטיקות</h2>
+            <h2 className="mb-4 fw-bold border-bottom pb-2" style={{ color: 'var(--primary)' }}>סטטיסטיקות</h2>
 
             <div className="stats-grid">
                 <div className="card standings-table">

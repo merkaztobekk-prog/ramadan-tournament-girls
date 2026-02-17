@@ -8,7 +8,7 @@
 .comment-section-title {
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    color: var(--primary-green, #2A6B11);
+    color: var(--primary-green);
 }
 
 .comment-form {
@@ -40,7 +40,7 @@
 
 .comment-form .form-control:focus {
     outline: none;
-    border-color: var(--primary-green, #2A6B11);
+    border-color: var(--primary-green);
     background: rgba(255, 255, 255, 1);
 }
 
@@ -66,7 +66,7 @@
     margin-top: 0.5rem;
     font-weight: bold;
     font-size: 1rem;
-    color: #c62828;
+    color: var(--danger);
 }
 
 .comment-form .btn {
@@ -79,12 +79,12 @@
 }
 
 .comment-form .btn-primary {
-    background: var(--primary-green, #2A6B11);
+    background: var(--primary-green);
     color: var(--white, #FFFFFF);
 }
 
 .comment-form .btn-primary:hover:not(:disabled) {
-    background: var(--primary-dark, #1a4d0a);
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -108,12 +108,12 @@
 }
 
 .comments-list::-webkit-scrollbar-thumb {
-    background: rgba(42, 107, 17, 0.4);
+    background: rgba(255, 84, 121, 0.4);
     border-radius: 3px;
 }
 
 .comments-list::-webkit-scrollbar-thumb:hover {
-    background: rgba(42, 107, 17, 0.6);
+    background: rgba(255, 84, 121, 0.6);
 }
 
 .loading,
@@ -145,7 +145,7 @@
 
 .comment-author {
     font-weight: 600;
-    color: var(--primary-green, #2A6B11);
+    color: var(--primary-green);
 }
 
 .comment-date {

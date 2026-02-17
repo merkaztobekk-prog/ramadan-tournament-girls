@@ -92,7 +92,7 @@ const Schedule = () => {
 
     return (
         <div className="schedule-page container py-4">
-            <h2 className="mb-4 fw-bold text-success border-bottom pb-2">לוח משחקים</h2>
+            <h2 className="mb-4 fw-bold border-bottom pb-2" style={{ color: 'var(--primary)' }}>לוח משחקים</h2>
             <div className="matches-list">
                 {sortedMatches.map((match) => {
                     const status = getMatchStatus(match);

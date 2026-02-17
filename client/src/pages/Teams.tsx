@@ -29,12 +29,12 @@ const Teams = () => {
         setExpandedTeam(expandedTeam === teamId ? null : teamId);
     };
 
-    if (loading) return <div className="text-center p-5"><div className="spinner-border text-success" role="status"><span className="visually-hidden">טוען...</span></div></div>;
+    if (loading) return <div className="text-center p-5"><div className="spinner-border" style={{ color: 'var(--primary)' }} role="status"><span className="visually-hidden">טוען...</span></div></div>;
     if (error) return <div className="alert alert-danger m-3">{error}</div>;
 
     return (
         <div className="container py-4">
-            <h2 className="mb-4 fw-bold text-success border-bottom pb-2">קבוצות הטורניר</h2>
+            <h2 className="mb-4 fw-bold border-bottom pb-2" style={{ color: 'var(--primary)' }}>קבוצות הטורניר</h2>
             <div className="table-responsive">
                 <table className="table table-hover" id="teamsTable">
                     <thead>
@@ -82,7 +82,7 @@ const Teams = () => {
                                                                 {player.isCaptain && <span className="badge text-dark position-absolute top-0 start-0 m-2">⭐</span>}
                                                                 <div className="fw-bold">{player.nickname}</div>
                                                                 <div className="text-muted small">{player.firstName} {player.lastName}</div>
-                                                                <div className="badge bg-success mt-1">{player.number}</div>
+                                                                <div className="badge mt-1" style={{ backgroundColor: 'var(--primary)', color: 'white' }}>{player.number}</div>
                                                                 <div className="small text-secondary">{player.position}</div>
                                                             </div>
                                                         </div>
@@ -103,7 +103,7 @@ const Teams = () => {
                 <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setSelectedPlayer(null)}>
                     <div className="modal-dialog modal-dialog-centered" onClick={e => e.stopPropagation()}>
                         <div className="modal-content">
-                            <div className="modal-header bg-success text-white">
+                            <div className="modal-header text-white" style={{ backgroundColor: 'var(--primary)' }}>
                                 <h5 className="modal-title">{selectedPlayer.firstName} {selectedPlayer.lastName}</h5>
                                 <button type="button" className="btn-close btn-close-white" onClick={() => setSelectedPlayer(null)}></button>
                             </div>
@@ -122,13 +122,13 @@ const Teams = () => {
                                 />
                                 <h4>{selectedPlayer.nickname}</h4>
                                 <div className="d-flex justify-content-center gap-2 mb-3">
-                                    <span className="badge bg-success fs-6">{selectedPlayer.number}</span>
+                                    <span className="badge fs-6" style={{ backgroundColor: 'var(--primary)', color: 'white' }}>{selectedPlayer.number}</span>
                                     <span className="badge bg-secondary fs-6">{selectedPlayer.position}</span>
                                     {selectedPlayer.isCaptain && <span className="badge bg-warning text-dark fs-6">קפטן</span>}
                                 </div>
                                 <hr />
                                 <div className="text-end">
-                                    <h6 className="fw-bold text-success">אודות השחקן:</h6>
+                                    <h6 className="fw-bold" style={{ color: 'var(--primary)' }}>אודות השחקן:</h6>
                                     <p>{selectedPlayer.bio || 'אין מידע נוסף אודות השחקן.'}</p>
                                 </div>
                             </div>
