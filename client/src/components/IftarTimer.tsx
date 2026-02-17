@@ -43,7 +43,7 @@ const IftarTimer = () => {
         const days = Math.round(diff / (1000 * 60 * 60 * 24));
 
         if (days > 0) {
-            return `רמאדן קרים!`;
+            return `רמדאן קרים!`;
         }
 
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -103,7 +103,7 @@ const IftarTimer = () => {
                         <div className="iftar-icon">🌙</div>
                         <div className="iftar-info">
                             <div className="iftar-label">
-                                {nextIftar.date === "2026-02-18" || new Date() < new Date("2026-02-18") ? "נצ'מאז עוד" : "איפטר הבא"}
+                                {nextIftar.date === "2026-02-18" || new Date() < new Date("2026-02-18") ? "" : "איפטר הבא"}
                             </div>
                             <div className="iftar-countdown">{timeLeft}</div>
                             <div className="iftar-details-hover">
