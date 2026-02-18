@@ -96,7 +96,7 @@ body {
   height: 80%;
   /* Base height */
   width: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 9/7;
   /* Force square for perfect rounding */
   object-fit: contain;
   /* Combined with padding for inner scaling */
@@ -117,6 +117,8 @@ body {
 }
 
 .header-side-logo.right {
+  height: 50%;
+  background-color: #296912;
   right: 22%;
   transform-origin: center right;
 }
