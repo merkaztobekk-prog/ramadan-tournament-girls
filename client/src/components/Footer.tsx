@@ -7,7 +7,7 @@ const Footer = () => {
                     <div className="col-md-4 mb-3">
                         <h5 className="footer-heading">טורניר נצ'מאז 1447/2026</h5>
                         <p className="footer-text">
-                            טורניר כדורגל בחסות מרכז צעירים
+                            טורניר בנות בחסות מרכז צעירים
                         </p>
                     </div>
 
