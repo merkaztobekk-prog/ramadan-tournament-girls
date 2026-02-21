@@ -51,7 +51,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-page">
             <div className="container py-4">
-                <h2 className="mb-40 fw-bold border-bottom pb-2" style={{ color: 'var(--primary)' }}>דף הבית</h2>
+                <h2 className="mb-4 fw-bold border-bottom pb-2" style={{ color: 'var(--primary)' }}>דף הבית</h2>
                 <div className="dashboard-grid">
                     {data.nextMatches && data.nextMatches.length > 0 && (
                         <div className="dashboard-card next-matches-card">
