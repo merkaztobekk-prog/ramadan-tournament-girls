@@ -1,10 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-export interface IGoal {
-    memberId: number;
-    minute: number;
-}
-
 export interface IMatch extends Document {
     id: number;
     date: Date;
@@ -14,15 +9,9 @@ export interface IMatch extends Document {
     team2Id: number;
     score1: number | null;
     score2: number | null;
-    goals: IGoal[];
     createdBy?: mongoose.Types.ObjectId;
     createdAt: Date;
 }
-
-const goalSchema = new Schema<IGoal>({
-    memberId: { type: Number, required: true },
-    minute: { type: Number, required: true },
-}, { _id: false });
 
 const matchSchema = new Schema<IMatch>({
     id: {
@@ -60,7 +49,6 @@ const matchSchema = new Schema<IMatch>({
         type: Number,
         default: null,
     },
-    goals: [goalSchema],
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User',

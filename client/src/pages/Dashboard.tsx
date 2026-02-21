@@ -109,19 +109,6 @@ const Dashboard = () => {
                         </div>
                     </div>
                 )}
-                {data.topScorer && (
-                    <div className="dashboard-card top-scorer">
-                        <h2>מלך השערים</h2>
-                        <div className="scorer-info">
-                            <div className="scorer-name">{data.topScorer.playerName}</div>
-                            <div className="scorer-team">{data.topScorer.teamName}</div>
-                            <div className="scorer-goals">
-                                <span className="goals-count">{data.topScorer.goals}</span>
-                                <span className="goals-label">שערים</span>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     );

@@ -76,7 +76,6 @@ async function migrateData() {
             team2Id: match.team2_id,  // Map snake_case to camelCase
             score1: match.score1,
             score2: match.score2,
-            goals: match.goals || [],
         }));
         await Match.insertMany(matchesWithDates);
         console.log(`✅ Imported ${matchesData.length} matches`);

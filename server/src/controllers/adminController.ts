@@ -79,7 +79,7 @@ export const importPlayers = async (req: Request, res: Response): Promise<void> 
                 lastName: last_name || '',
                 nickname: displayNickname,
                 number: playerNumber,
-                position: position || 'מחמם ספסל',
+                position: position || 'GRL PWR',
                 isCaptain: captain === '1',
                 bio: bio || `משחק בעד ${team_name}`
             });

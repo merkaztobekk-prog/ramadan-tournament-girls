@@ -18,11 +18,6 @@ export interface Team {
     createdAt: string;
 }
 
-export interface Goal {
-    memberId: number;
-    minute: number;
-}
-
 export interface Match {
     _id: string;
     id: number;
@@ -35,7 +30,6 @@ export interface Match {
     score2: number;
     team1Name?: string;
     team2Name?: string;
-    goals: Goal[];
     createdAt: string;
 }
 
@@ -53,12 +47,6 @@ export interface Standing {
     teamId: number;
     teamName: string;
     played: number;
-    won: number;
-    drawn: number;
-    lost: number;
-    goalsFor: number;
-    goalsAgainst: number;
-    goalDifference: number;
     points: number;
 }
 

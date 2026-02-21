@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { teamsAPI } from '../../api/client';
-import type { Match, Team, Goal } from '../../types';
+import type { Match, Team } from '../../types';
 import './MatchForm.css';
 
 interface MatchFormProps {
@@ -18,8 +18,7 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
         score2: '',
         date: '',
         location: '',
-        phase: 'group',
-        goals: [] as Goal[]
+        phase: 'group'
     });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -39,7 +38,6 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
 
     // Helper: Convert UTC Date to Jerusalem "Wall Clock" ISO string for input
     const toJerusalemIsoString = (date: Date): string => {
-        // Get the parts of the date in Jerusalem time
         const options: Intl.DateTimeFormatOptions = {
             timeZone: 'Asia/Jerusalem',
             year: 'numeric',
@@ -53,83 +51,29 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
         const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(date);
         const getPart = (type: string) => parts.find(p => p.type === type)?.value;
 
-        // Construct YYYY-MM-DDTHH:mm string
         return `${getPart('year')}-${getPart('month')}-${getPart('day')}T${getPart('hour')}:${getPart('minute')}`;
     };
 
-    // Helper: Convert Jerusalem "Wall Clock" string to UTC Date
-    // This creates a Date object that represents the specific time in Jerusalem
     const jerusalemStringToDate = (dateString: string): string => {
         if (!dateString) return '';
-
-        // create a date object as if it were UTC
         const [datePart, timePart] = dateString.split('T');
         const [year, month, day] = datePart.split('-').map(Number);
         const [hour, minute] = timePart.split(':').map(Number);
 
-        // Create a date object from these components
-        // We need to find the UTC timestamp that corresponds to this wall time in Jerusalem
-        // Approach: 
-        // 1. Create a UTC date with these components
-        // 2. Format it back to Jerusalem time to see the offset
-        // 3. Adjust
-
-        // Simpler approach: use a library or just construct it and let the server handle it? 
-        // No, client must send correct ISO string.
-
-        // Let's use the fact that we want "2026-03-20 20:00 Jerusalem"
-        // We can create a string with timezone offset if we knew it.
-        // But offset changes (DST).
-
-        // Brute force robust way:
-        // Create a date, assume local, then adjust? No, user local might be anything.
-
-        // Correct way without libraries (moment-timezone/date-fns-tz):
-        // 1. Guess UTC equivalent (same numbers)
-        // 2. Check what time it is in Jerusalem for that UTC
-        // 3. Adjust difference
-
-        // Actually, we can just construct a string with the timezone if environment supports it, 
-        // but Date constructor doesn't really support "Asia/Jerusalem".
-
-        // Workaround:
-        // We will send the string as is to the server? No, server expects ISO.
-
-        // Let's use the initialData logic's reverse.
-        // It's hard to do perfectly without a TZ library on client.
-        // However, for admin panel, we can approximate or use a loop to find exact time.
-
-        // Better: Construct a date string like "YYYY-MM-DDTHH:mm:00" and append a dummy offset, 
-        // then correct it? No.
-
-        // Let's try to find the offset for this specific time in Jerusalem.
-        // We can use Intl to find the offset? Not easily.
-
-        // Implementation:
-        // 1. Take the input "2026-03-20T20:00"
-        // 2. Create a specific Date from this assuming it's UTC: Date.UTC(2026, 2, 20, 20, 0)
-        // 3. Format this UTC date to Jerusalem time: "2026-03-20 22:00" (if offset is +2)
-        // 4. We wanted 20:00, we got 22:00. Difference is +2 hours.
-        // 5. Subtract 2 hours from the UTC timestamp.
-
         const targetTime = Date.UTC(year, month - 1, day, hour, minute);
         let estimated = new Date(targetTime);
 
-        // Iterate to converge (usually 1-2 steps)
         for (let i = 0; i < 3; i++) {
-            const jerusalemStr = toJerusalemIsoString(estimated); // "2026-03-20T22:00"
-
+            const jerusalemStr = toJerusalemIsoString(estimated);
             const [jDate, jTime] = jerusalemStr.split('T');
             const [jY, jM, jD] = jDate.split('-').map(Number);
             const [jH, jMin] = jTime.split(':').map(Number);
 
             const actualInJerusalem = Date.UTC(jY, jM - 1, jD, jH, jMin);
             const diff = actualInJerusalem - targetTime;
-
             if (diff === 0) break;
             estimated = new Date(estimated.getTime() - diff);
         }
-
         return estimated.toISOString();
     };
 
@@ -142,8 +86,7 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                 score2: initialData.score2?.toString() ?? '',
                 date: toJerusalemIsoString(new Date(initialData.date)),
                 location: initialData.location,
-                phase: initialData.phase,
-                goals: initialData.goals || []
+                phase: initialData.phase
             });
         }
     }, [initialData]);
@@ -246,11 +189,11 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                 </div>
 
                 <div className="col-md-6">
-                    <label htmlFor="score1" className="form-label">תוצאה קבוצה 1</label>
+                    <label htmlFor="score1" className="form-label">ניקוד קבוצה 1</label>
                     <input type="number" className="form-control" id="score1" value={formData.score1} onChange={handleChange} min="0" />
                 </div>
                 <div className="col-md-6">
-                    <label htmlFor="score2" className="form-label">תוצאה קבוצה 2</label>
+                    <label htmlFor="score2" className="form-label">ניקוד קבוצה 2</label>
                     <input type="number" className="form-control" id="score2" value={formData.score2} onChange={handleChange} min="0" />
                 </div>
 
@@ -281,79 +224,6 @@ const MatchForm = ({ initialData, onSubmit, onCancel }: MatchFormProps) => {
                         <option value="knockout">נוקאאוט</option>
                     </select>
                 </div>
-            </div>
-
-            <div className="card mt-4 p-3 bg-light">
-                <h5>ניהול כובשים</h5>
-                <div className="row g-3 align-items-end">
-                    <div className="col-md-8">
-                        <label className="form-label">בחר מבקיע</label>
-                        <select
-                            className="form-select"
-                            id="goalPlayer"
-                            onChange={(e) => {
-                                if (e.target.value) {
-                                    const memberId = parseInt(e.target.value);
-                                    setFormData(prev => ({
-                                        ...prev,
-                                        goals: [...prev.goals, { memberId, minute: 0 }]
-                                    }));
-                                    e.target.value = ""; // Reset select
-                                }
-                            }}
-                        >
-                            <option value="">בחר שחקן...</option>
-                            <optgroup label="קבוצה 1">
-                                {teams.find(t => t.id === parseInt(formData.team1Id))?.players.map(p => (
-                                    <option key={p.memberId} value={p.memberId}>
-                                        {p.nickname || `${p.firstName} ${p.lastName}`} (#{p.number})
-                                    </option>
-                                ))}
-                            </optgroup>
-                            <optgroup label="קבוצה 2">
-                                {teams.find(t => t.id === parseInt(formData.team2Id))?.players.map(p => (
-                                    <option key={p.memberId} value={p.memberId}>
-                                        {p.nickname || `${p.firstName} ${p.lastName}`} (#{p.number})
-                                    </option>
-                                ))}
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
-
-                {formData.goals.length > 0 && (
-                    <div className="mt-3">
-                        <h6>רשימת כובשים:</h6>
-                        <ul className="list-group">
-                            {formData.goals.map((goal, idx) => {
-                                const team1 = teams.find(t => t.id === parseInt(formData.team1Id));
-                                const team2 = teams.find(t => t.id === parseInt(formData.team2Id));
-                                const player = team1?.players.find(p => p.memberId === goal.memberId) ||
-                                    team2?.players.find(p => p.memberId === goal.memberId);
-
-                                return (
-                                    <li key={idx} className="list-group-item d-flex justify-content-between align-items-center">
-                                        <span>
-                                            ⚽ {player ? (player.nickname || `${player.firstName} ${player.lastName}`) : `שחקן ${goal.memberId}`}
-                                        </span>
-                                        <button
-                                            type="button"
-                                            className="btn btn-sm btn-outline-danger"
-                                            onClick={() => {
-                                                setFormData(prev => ({
-                                                    ...prev,
-                                                    goals: prev.goals.filter((_, i) => i !== idx)
-                                                }));
-                                            }}
-                                        >
-                                            מחק
-                                        </button>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                )}
             </div>
 
             <div className="d-flex gap-2 mt-4">

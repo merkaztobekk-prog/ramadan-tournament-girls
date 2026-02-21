@@ -43,8 +43,7 @@ const seedData = async () => {
                 team1Id: m.team1_id,
                 team2Id: m.team2_id,
                 score1: m.score1,
-                score2: m.score2,
-                goals: m.goals || [] // Ensure goals is an array
+                score2: m.score2
             }));
 
             // Insert new matches

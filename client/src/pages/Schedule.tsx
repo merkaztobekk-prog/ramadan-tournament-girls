@@ -38,15 +38,6 @@ const Schedule = () => {
         return team ? team.name : `קבוצה ${teamId}`;
     };
 
-    const getPlayerNickname = (memberId: number) => {
-        for (const team of teams) {
-            const player = team.players?.find(p => p.memberId === memberId);
-            if (player) {
-                return player.nickname;
-            }
-        }
-        return '';
-    };
 
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
@@ -148,18 +139,6 @@ const Schedule = () => {
                                 <span className="match-location">{match.location}</span>
                             </div>
 
-                            {match.goals && match.goals.length > 0 && (
-                                <div className="match-goals">
-                                    <h4>כובשים:</h4>
-                                    <div className="goals-list">
-                                        {match.goals.map((goal, idx) => (
-                                            <span key={idx} className="goal-item">
-                                                {getPlayerNickname(goal.memberId)}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
 
                             <div className="match-actions">
                                 <button
