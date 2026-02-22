@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Protections
+Disallow: /admin
+Disallow: /admin/*
+
+# Sitemap link
+Sitemap: https://ramadan-tournament-girls.vercel.app/sitemap.xml
